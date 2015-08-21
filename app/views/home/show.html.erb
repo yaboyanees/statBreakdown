@@ -1,0 +1,8 @@
+<% @team1.each do |t| %>  
+	<% if params[:id].to_s == t.id.to_s %>
+		<%= t.id %><br />
+		<%= t.team1 %><br />
+		<%= t.team1pts %><br />
+		<br />
+	<% end %>
+<% end %>

@@ -1,0 +1,140 @@
+<script type="text/javascript">
+	$(function () {
+		var chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'container',
+			type: 'line',
+			fontSize:'100%'
+		},
+		title: {
+			text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)',
+			style: {
+				fontSize:'2vmax'
+			}
+		},
+		subtitle: {
+			text: 'Advantage Value: <%= r = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>',
+			style: {
+				fontSize:'1.7vmax'
+			}
+		},
+		xAxis: {
+			categories: <%= @team1wk  %>,
+			title: {
+				text: 'Game Weeks',
+				style: {
+                    fontSize:'1.7vmax',
+                }
+			}
+		},
+		yAxis: {
+			title: {
+				text: 'Performance',
+				style: {
+                    fontSize:'1.7vmax',
+                }
+			}
+		},
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: true,
+					borderRadius: 5,
+					backgroundColor: '#F0C34D',
+					borderWidth: 1,
+					borderColor: '#AAA',
+					y: -6
+				},
+				enableMouseTracking: false
+			}
+		},
+		series: [{
+			name: '<%= @team1name.first.gsub('"','') %>',
+			color: '#4659BF',
+			data: <%= @team1gt %>
+		}, {
+			name: '<%= @team2name.first.gsub('"','') %>',
+			color: '#000',
+			data: <%= @team2gt %>
+		}]
+	});
+		$(".transform").change(function() {
+			var value = this.getAttribute("value");
+
+			if (value == 'a') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1off.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2off.last.round(3) %>)' 
+					}, 
+					{ 
+					text: 'Advantage Value: <%= s = ((@team1off.last) - (@team2off.last)).round(3) %>'
+				});
+				chart.addSeries({
+					name: '<%= @team1name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#4659BF',  
+					data: <%= @team1off %>              
+				});   
+				chart.addSeries({
+					name: '<%= @team2name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#2d2c2c',  
+					data: <%= @team2off %>               
+				});  
+			}
+
+			else if (value == 'b') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1def.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2def.last.round(3) %>)' 
+					}, 
+					{ 
+					text: 'Advantage Value: <%= t = ((@team1def.last) - (@team2def.last)).round(3) %>'
+				});
+				chart.addSeries({
+					name: '<%= @team1name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#4659BF',  
+				    data: <%= @team1def %>              
+				});   
+				chart.addSeries({
+					name: '<%= @team2name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#2d2c2c',  
+				    data: <%= @team2def %>             
+				});  
+			}
+			else if (value == 'c') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)' 
+					}, 
+					{ 
+					text: 'Advantage Value: <%= u = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>'
+				});
+				chart.addSeries({
+					name: '<%= @team1name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#4659BF',  
+				   data: <%= @team1gt %>              
+				});   
+				chart.addSeries({
+					name: '<%= @team2name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#2d2c2c',  
+				   data: <%= @team2gt %>              
+				});  
+			}
+
+			else {
+			   alert("Error!");   
+			}
+		});
+	});
+</script>

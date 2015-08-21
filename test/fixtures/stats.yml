@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season: MyString
+  teamMean: 1.5
+  teamTrendMean: 1.5
+  offMean: 1.5
+  offTrendMean: 1.5
+  defMean: 1.5
+  defTrendMean: 1.5
+  win: false
+  team1pts: 1
+  team2pts: 1
+  diff: 1
+  team1: MyString
+  team2: MyString
+
+two:
+  season: MyString
+  teamMean: 1.5
+  teamTrendMean: 1.5
+  offMean: 1.5
+  offTrendMean: 1.5
+  defMean: 1.5
+  defTrendMean: 1.5
+  win: false
+  team1pts: 1
+  team2pts: 1
+  diff: 1
+  team1: MyString
+  team2: MyString

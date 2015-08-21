@@ -1,0 +1,53 @@
+<h1>Listing Stats</h1>
+<%= form_tag import_stats_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Upload" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Game Mean</th>
+      <th>Season Mean</th>
+      <th>Current Mean</th>
+      <th>OFF Mean</th>
+      <th>Season OFF Mean</th>
+      <th>Cum OFF Mean</th>
+      <th>DEF GameMean</th>
+      <th>Season DEF Mean</th>
+      <th>Cum DEF Mean</th>
+      <th>Win</th>
+      <th>Team1 pts</th>
+      <th>Team2 pts</th>
+      <th>Diff</th>
+      <th>Team1</th>
+      <th>Team2</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stats.each do |stat| %>
+      <tr>
+        <td><%= stat.week %></td>
+        <td><%= stat.GameMean %></td>
+        <td><%= stat.Season2dateMean %></td>
+        <td><%= stat.CurrentMeanTrend %></td>
+        <td><%= stat.OFFGameMean %></td>
+        <td><%= stat.Season2dateOFFMean %></td>
+        <td><%= stat.CurrentOFFMeanTrend %></td>
+        <td><%= stat.DEFGameMean %></td>
+        <td><%= stat.Season2dateDEFMean %></td>
+        <td><%= stat.CurrentDEFMeanTrend %></td>
+        <td><%= stat.gameResult %></td>
+        <td><%= stat.team1pts %></td>
+        <td><%= stat.team2pts %></td>
+        <td><%= stat.diff %></td>
+        <td><%= stat.team1 %></td>
+        <td><%= stat.team2 %></td>
+        <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
