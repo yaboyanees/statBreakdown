@@ -4,6 +4,10 @@
 	<%= submit_tag "Upload" %>
 <% end %>
 
+<br />
+<%= link_to 'Home', root_path %>
+<br />
+
 <table>
   <thead>
     <tr>
@@ -23,7 +27,6 @@
       <th>Diff</th>
       <th>Team1</th>
       <th>Team2</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -46,7 +49,6 @@
         <td><%= stat.diff %></td>
         <td><%= stat.team1 %></td>
         <td><%= stat.team2 %></td>
-        <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
