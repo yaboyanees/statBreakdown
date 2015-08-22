@@ -1,15 +1,16 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
 <% if params[:firstTeam] %>	
 	<%= render partial: 'chartScript' %>
-	<div id="container"></div>
+	<%= render partial: 'scatterScript' %>
+	<div id="chart"></div>
 	<div id="transform">
 		<input class="transform" name="newSeries" type="radio" value="a"> Offense</input>
 		<input class="transform" name="newSeries" type="radio" value="b"> Defense</input>
 		<input class="transform" name="newSeries" type="radio" value="c"> Game</input>
-		<br />
-		<br />
-		<p class="newMatch"><%= link_to 'New Matchup', root_path %></p>
 	</div>
+	<div id="scatter"></div>
+	<p class="newMatch"><%= link_to 'New Matchup', root_path %></p>
 <% else %>
 	<%= form_tag(root_path, :method => "get", id: "search-form") do %>
   		<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %>

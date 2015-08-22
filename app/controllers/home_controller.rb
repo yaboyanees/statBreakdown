@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	def index
  		if params[:firstTeam]
- 			@team1 = Stat.search(params[:firstTeam]).order("week ASC") 	
+ 			@team1 = Stat.search(params[:firstTeam]) 	
  			@team1wk = @team1.pluck("week")
  			@team1gt = @team1.pluck("GameMean")
  			@team1off = @team1.pluck("OFFGameMean")
@@ -10,7 +10,7 @@ class HomeController < ApplicationController
  			@team1name = @team1.uniq.pluck("team1")
  			@team1result = @team1.select("win")
 
- 			@team2 = Stat.search(params[:secondTeam]).order("week ASC")
+ 			@team2 = Stat.search(params[:secondTeam])
   			@team2name = @team2.uniq.pluck("team1")
   			@team2gt = @team2.pluck("GameMean")
  			@team2off = @team2.pluck("OFFGameMean")
