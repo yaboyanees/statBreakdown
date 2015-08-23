@@ -32,6 +32,14 @@ class StatsController < ApplicationController
     end
   end
 
+  def kill
+  	@stat = Stat.all
+    @stat.each do |t|
+    	t.destroy
+    end
+    redirect_to stats_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stat

@@ -50,11 +50,11 @@
 		},
 		series: [{
 			name: '<%= @team1name.first.gsub('"','') %>',
-			color: '#4659BF',
+			color: '#dd402e',
 			data: <%= @team1gt %>
 		}, {
 			name: '<%= @team2name.first.gsub('"','') %>',
-			color: '#000',
+			color: '#323232',
 			data: <%= @team2gt %>
 		}]
 	});
@@ -62,6 +62,31 @@
 			var value = this.getAttribute("value");
 
 			if (value == 'a') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)' 
+					}, 
+					{ 
+					text: 'Advantage Value: <%= u = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>'
+				});
+				chart.addSeries({
+					name: '<%= @team1name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#4659BF',  
+				   data: <%= @team1gt %>              
+				});   
+				chart.addSeries({
+					name: '<%= @team2name.first.gsub('"','') %>',
+					type: 'line',
+					color: '#2d2c2c',  
+				   data: <%= @team2gt %>              
+				});  
+			}
+
+
+			else if (value == 'b') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -85,7 +110,7 @@
 				});  
 			}
 
-			else if (value == 'b') 
+			else if (value == 'c') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -106,29 +131,6 @@
 					type: 'line',
 					color: '#2d2c2c',  
 				    data: <%= @team2def %>             
-				});  
-			}
-			else if (value == 'c') 
-			{
-				chart.series[0].remove();
-				chart.series[0].remove();
-				chart.setTitle({ 
-					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)' 
-					}, 
-					{ 
-					text: 'Advantage Value: <%= u = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>'
-				});
-				chart.addSeries({
-					name: '<%= @team1name.first.gsub('"','') %>',
-					type: 'line',
-					color: '#4659BF',  
-				   data: <%= @team1gt %>              
-				});   
-				chart.addSeries({
-					name: '<%= @team2name.first.gsub('"','') %>',
-					type: 'line',
-					color: '#2d2c2c',  
-				   data: <%= @team2gt %>              
 				});  
 			}
 

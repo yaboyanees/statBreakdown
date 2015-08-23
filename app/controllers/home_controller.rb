@@ -26,5 +26,6 @@ class HomeController < ApplicationController
 		@stats = Stat.all
 		@team1 = @stats.select("id", "teamMean", "teamTrendMean", "offMean", "offTrendMean", "defMean", "defTrendMean", "win", "team1pts", "diff", "team1")
 	end
+  
 end
 
