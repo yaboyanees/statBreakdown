@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	def index
  		if params[:firstTeam]
  			@team1 = Stat.search(params[:firstTeam]) 	
- 			@team1wk = @team1.pluck("week")
+ 			@team1wk = @team1.uniq.pluck("week")
  			@team1gt = @team1.pluck("GameMean")
  			@team1off = @team1.pluck("OFFGameMean")
  			@team1def = @team1.pluck("DEFGameMean")
