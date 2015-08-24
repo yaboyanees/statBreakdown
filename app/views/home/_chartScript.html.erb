@@ -7,13 +7,13 @@
 			fontSize:'100%'
 		},
 		title: {
-			text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)',
+			text: '<%= @team1name.first.gsub('"','') %> vs <%= @team2name.first.gsub('"','') %>',
 			style: {
 				fontSize:'2vmax'
 			}
 		},
 		subtitle: {
-			text: 'Advantage Value: <%= r = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>',
+			text: 'Performance By Week',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -74,14 +74,14 @@
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#4659BF',  
-				   data: <%= @team1gt %>              
+					color: '#dd402e',  
+				    data: <%= @team1gt %>              
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#2d2c2c',  
-				   data: <%= @team2gt %>              
+					color: '#323232',  
+				    data: <%= @team2gt %>              
 				});  
 			}
 
@@ -99,13 +99,13 @@
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#4659BF',  
+					color: '#dd402e',  
 					data: <%= @team1off %>              
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#2d2c2c',  
+					color: '#323232',  
 					data: <%= @team2off %>               
 				});  
 			}
@@ -123,13 +123,13 @@
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#4659BF',  
+					color: '#dd402e',  
 				    data: <%= @team1def %>              
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#2d2c2c',  
+					color: '#323232',  
 				    data: <%= @team2def %>             
 				});  
 			}

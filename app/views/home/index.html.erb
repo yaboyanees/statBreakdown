@@ -1,5 +1,6 @@
 <% if params[:firstTeam] %>	
 	<%= render partial: 'chartScript' %>
+	<%= render partial: 'columnScript' %>
 	<%= render partial: 'scatterScript' %>
 	<div id="chart"></div>
 	<div id="transform">
@@ -7,6 +8,7 @@
 		<input class="transform" name="newSeries" type="radio" value="b"> Offense</input>
 		<input class="transform" name="newSeries" type="radio" value="c"> Defense</input>
 	</div>
+	<div id="column"></div>
 	<div id="scatter"></div>
 	<p class="newMatch"><%= link_to 'New Matchup', root_path %></p>
 <% else %>
