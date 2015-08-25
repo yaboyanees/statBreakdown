@@ -1,5 +1,6 @@
 class StatsController < ApplicationController
   before_action :set_stat, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "andy", password: "theQ5.com"
 
   # GET /stats
   # GET /stats.json
