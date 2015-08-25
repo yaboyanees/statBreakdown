@@ -1,4 +1,5 @@
-<% a = @teamValues %><%= a[0] %>
+<% a = @teamValues %>
+<% b = @teamNames %>
 <script type="text/javascript">
 $(function () {
 
@@ -38,17 +39,22 @@ $(function () {
             }
         },
         title: {
-            text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)',
+            text: '<%= @team1name.first.gsub('"','') %> vs <%= @team2name.first.gsub('"','') %>',
             style: {
 				fontSize:'2vmax'
 			}
         },
         subtitle: {
-            text: 'Advantage Value: <%= r = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>',
+            text: 'Relativity to all 32 Teams',
 			style: {
 				fontSize:'1.7vmax'
 			}
         },
+		yAxis: {
+			title: {
+				text: '',
+			}
+		},            
         plotOptions: {
             scatter: {
                 width: 10,
@@ -60,110 +66,247 @@ $(function () {
         legend: {
             enabled: false
         },
+
         series: [{            
             name: '<%= @team1name.first.gsub('"','') %>',
             data: [<%= @teamValue1 %>],
-            color: '#dd402e'
+            color: '#dd402e',
+            marker: {
+                symbol: 'circle',
+                radius: 10
+            },
         }, {          
             name: '<%= @team2name.first.gsub('"','') %>',
             data: [<%= @teamValue2 %>],
-            color: '#323232'
+            color: '#323232',
+            marker: {
+                symbol: 'circle',
+                radius: 10
+            },
         }, {  
+        	name: '<%= b[0] %>',
             data: [<%= a[0] %>],
-            color: 'green'
-        }, {            
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {      
+        	name: '<%= b[1] %>',
             data: [<%= a[1] %>],
-            color: 'green'
-        }, {             
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {        
+        	name: '<%= b[2] %>',
             data: [<%= a[2] %>],
-            color: 'green'
-        }, {            
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {        
+        	name: '<%= b[3] %>',
             data: [<%= a[3] %>],
-            color: 'green'
-        }, {             
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {        
+        	name: '<%= b[4] %>',
             data: [<%= a[4] %>],
-            color: 'green'
-        }, {            
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {           
+        	name: '<%= b[5] %>',
             data: [<%= a[5] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[6] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[7] %>],
-            color: 'green'
-        }, {           
-            data: [<%= a[8] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[9] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[10] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[11] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[12] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[13] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[14] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[15] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[16] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[17] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[18] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[19] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[20] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[21] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[22] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[23] %>],
-            color: 'green'
-        }, {             
-            data: [<%= a[24] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[25] %>],
-            color: 'green'
-        }, {           
-            data: [<%= a[26] %>],
-            color: 'green'
-        }, {           
-            data: [<%= a[27] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[28] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[29] %>],
-            color: 'green'
-        }, {            
-            data: [<%= a[30] %>],
-            color: 'green'
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
         }, {          
+        	name: '<%= b[6] %>',
+            data: [<%= a[6] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {       
+        	name: '<%= b[7] %>',
+            data: [<%= a[7] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {     
+        	name: '<%= b[8] %>',
+            data: [<%= a[8] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {     
+        	name: '<%= b[9] %>',
+            data: [<%= a[9] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {     
+        	name: '<%= b[10] %>',
+            data: [<%= a[10] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {   
+        	name: '<%= b[11] %>',
+            data: [<%= a[11] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {            
+        	name: '<%= b[12] %>',
+            data: [<%= a[12] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {            
+        	name: '<%= b[13] %>',
+            data: [<%= a[13] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {             
+        	name: '<%= b[14] %>',
+            data: [<%= a[14] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {   
+        	name: '<%= b[15] %>',
+            data: [<%= a[15] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {   
+        	name: '<%= b[16] %>',
+            data: [<%= a[16] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {       
+        	name: '<%= b[17] %>',
+            data: [<%= a[17] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {       
+        	name: '<%= b[18] %>',
+            data: [<%= a[18] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {     
+        	name: '<%= b[19] %>',
+            data: [<%= a[19] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {    
+        	name: '<%= b[20] %>',
+            data: [<%= a[20] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {          
+        	name: '<%= b[21] %>',
+            data: [<%= a[21] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {             
+        	name: '<%= b[22] %>',
+            data: [<%= a[22] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {          
+        	name: '<%= b[23] %>',
+            data: [<%= a[23] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {             
+        	name: '<%= b[24] %>',
+            data: [<%= a[24] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {           
+        	name: '<%= b[25] %>',
+            data: [<%= a[25] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {          
+        	name: '<%= b[26] %>',
+            data: [<%= a[26] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {           
+        	name: '<%= b[27] %>',
+            data: [<%= a[27] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {           
+        	name: '<%= b[28] %>',
+            data: [<%= a[28] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {         
+        	name: '<%= b[29] %>',
+            data: [<%= a[29] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {         
+        	name: '<%= b[30] %>',
+            data: [<%= a[30] %>],
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
+        }, {          
+        	name: '<%= b[31] %>',
             data: [<%= a[31] %>],
-            color: 'green'
+            color: 'green',
+            marker: {
+                symbol: 'circle'
+            },
         }]
     });
 

@@ -14,7 +14,7 @@
 <% else %>
 	<%= form_tag(root_path, :method => "get", id: "search-form") do %>
   		<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %>
-  		<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team 2' %>
+  		<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team 2' %><br /><br />
 		<%= submit_tag "View Matchup", :name => nil %>
 	<% end %>
 <% end %>
