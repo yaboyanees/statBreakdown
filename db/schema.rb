@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150811220606) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "stats", force: :cascade do |t|
     t.integer  "week"
     t.float    "GameMean"
