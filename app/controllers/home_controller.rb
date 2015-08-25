@@ -24,8 +24,8 @@ class HomeController < ApplicationController
  			
  			@a = Stat.all
 			@b = @a.group("stats.team1")
-			@c = @b.having("stats.created_at = MAX(stats.created_at)")
-			@teamValues = @c.pluck("stats.Season2dateMean", "stats.Season2dateOFFMean", "stats.Season2dateDEFMean")
+			@c = @b.having("created_at = MAX(stats.created_at)")
+			@teamValues = @c.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
 
  		else
  			@stats = Stat.all
