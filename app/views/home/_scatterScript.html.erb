@@ -1,5 +1,40 @@
 <% a = @teamValues %>
 <% b = @teamNames %>
+
+<% c = @team1current %>
+<% if c < -0.4 %>
+	<% c1 = 5 %>
+<% elsif c < -0.2 %>
+	<% c1 = 10 %>
+<% elsif c < 0 %>
+	<% c1 = 15 %>
+<% elsif c >= 0 %>
+	<% c1 = 25 %>
+<% elsif c > 0.2 %>
+	<% c1 = 35 %>
+<% elsif c > 0.4  %>
+	<% c1 = 40 %>
+<% else %>
+	<% c1 = 50 %>
+<% end %>
+
+<% d = @team2current %>
+<% if d < -0.4 %>
+	<% d1 = 5 %>
+<% elsif d < -0.2 %>
+	<% d1 = 10 %>
+<% elsif d < 0 %>
+	<% d1 = 15 %>
+<% elsif d >= 0 %>
+	<% d1 = 20 %>
+<% elsif d > 0.2 %>
+	<% d1 = 25 %>
+<% elsif d > 0.4 %>
+	<% d1 = 30 %>
+<% else %>
+	<% d1 = 35 %>
+<% end %>
+
 <script type="text/javascript">
 $(function () {
 
@@ -73,7 +108,7 @@ $(function () {
             color: '#dd402e',
             marker: {
                 symbol: 'circle',
-                radius: 10
+                radius: <%= c1 %>
             },
         }, {          
             name: '<%= @team2name.first.gsub('"','') %>',
@@ -81,7 +116,7 @@ $(function () {
             color: '#323232',
             marker: {
                 symbol: 'circle',
-                radius: 10
+                radius: <%= d1 %>
             },
         }, {  
         	name: '<%= b[0] %>',
