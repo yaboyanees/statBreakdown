@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150811220606) do
     t.float    "DEFGameMean"
     t.float    "Season2dateDEFMean"
     t.float    "CurrentDEFMeanTrend"
-    t.boolean  "win"
+    t.string   "win"
     t.integer  "team1pts"
     t.integer  "team2pts"
     t.integer  "diff"

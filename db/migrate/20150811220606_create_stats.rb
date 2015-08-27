@@ -14,7 +14,7 @@ class CreateStats < ActiveRecord::Migration
       t.float 	:Season2dateDEFMean
       t.float 	:CurrentDEFMeanTrend
       
-      t.boolean :win
+      t.string 	:win
       t.integer :team1pts
       t.integer :team2pts
       t.integer :diff

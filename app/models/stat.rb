@@ -6,16 +6,16 @@ class Stat < ActiveRecord::Base
 	  end
 	end
 
-	def gameResult
-		if self.win.nil?
-			a = "BYE"
-		elsif self.win?
-			a = "W"
-		else
-			a = "L"
-		end 
-		return a
-	end
+# 	def gameResult
+# 		if self.win.nil?
+# 			a = "BYE"
+# 		elsif self.win?
+# 			a = "W"
+# 		else
+# 			a = "L"
+# 		end 
+# 		return a
+# 	end
 
 	def self.search(query1)
   		where("team1 like ?", "%#{query1}%")  		

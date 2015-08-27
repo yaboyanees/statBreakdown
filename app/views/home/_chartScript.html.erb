@@ -1,5 +1,7 @@
 <script type="text/javascript">
 	$(function () {
+		var gameResultTeam1 = <%= raw @team1gt.to_json %>
+		var gameResultTeam2 = <%= raw @team2gt.to_json %>
 		var chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'chart',
@@ -48,27 +50,14 @@
 				enableMouseTracking: true
 			}
 		},
-        tooltip: {
-            formatter: function () {
-                var s = '<b>' + this.x + '</b>';
-				<% @tt.each do |ttt| %>
-                $.each(this.points, function () {
-                    s += '<br/>' + '(<%= ttt.gameResult %>)' + this.series.name + ': ' + this.y;
-                });
-                <% end %>
-                return s;
-                
-            },
-            shared: true
-        },
 		series: [{
 			name: '<%= @team1name.first.gsub('"','') %>',
 			color: '#dd402e',
-			data: <%= @team1gt %>
+			data: gameResultTeam1
 		}, {
 			name: '<%= @team2name.first.gsub('"','') %>',
 			color: '#323232',
-			data: <%= @team2gt %>
+			data: gameResultTeam2
 		}]
 	});
 		$(".transform").change(function() {
@@ -88,13 +77,13 @@
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#dd402e',  
-				    data: <%= @team1gt %>              
+				    data: gameResultTeam1             
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#323232',  
-				    data: <%= @team2gt %>              
+				    data: gameResultTeam2              
 				});  
 			}
 
@@ -113,13 +102,13 @@
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#dd402e',  
-					data: <%= @team1off %>              
+					data: gameResultTeam1              
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#323232',  
-					data: <%= @team2off %>               
+					data: gameResultTeam2              
 				});  
 			}
 
@@ -137,13 +126,13 @@
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#dd402e',  
-				    data: <%= @team1def %>              
+				    data: gameResultTeam1             
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#323232',  
-				    data: <%= @team2def %>             
+				    data: gameResultTeam2             
 				});  
 			}
 
