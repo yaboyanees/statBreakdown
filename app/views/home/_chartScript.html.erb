@@ -98,10 +98,10 @@
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.setTitle({ 
-					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1off.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2off.last.round(3) %>)' 
+					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1offVal.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2offVal.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Advantage Value: <%= s = ((@team1off.last) - (@team2off.last)).round(3) %>'
+					text: 'Advantage Value: <%= s = ((@team1offVal.last) - (@team2offVal.last)).round(3) %>'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
@@ -122,10 +122,10 @@
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.setTitle({ 
-					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1def.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2def.last.round(3) %>)' 
+					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1defVal.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2defVal.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Advantage Value: <%= t = ((@team1def.last) - (@team2def.last)).round(3) %>'
+					text: 'Advantage Value: <%= t = ((@team1defVal.last) - (@team2defVal.last)).round(3) %>'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
