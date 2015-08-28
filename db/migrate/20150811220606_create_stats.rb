@@ -1,6 +1,7 @@
 class CreateStats < ActiveRecord::Migration
   def change
     create_table :stats do |t|
+      t.integer :year    	
       t.integer :week
       t.float 	:GameMean
       t.float 	:Season2dateMean
@@ -20,6 +21,9 @@ class CreateStats < ActiveRecord::Migration
       t.integer :diff
       t.string 	:team1
       t.string 	:team2
+      
+      t.string 	:short1
+      t.string 	:short2
       
       t.timestamps null: false
     end

@@ -2,6 +2,10 @@
 	$(function () {
 		var gameResultTeam1 = <%= raw @team1gt.to_json %>
 		var gameResultTeam2 = <%= raw @team2gt.to_json %>
+		var gameOFFTeam1 = <%= raw @team1off.to_json %>
+		var gameOFFTeam2 = <%= raw @team2off.to_json %>
+		var gameDEFTeam1 = <%= raw @team1def.to_json %>
+		var gameDEFTeam2 = <%= raw @team2def.to_json %>
 		var chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'chart',
@@ -45,7 +49,8 @@
 					backgroundColor: '#F0C34D',
 					borderWidth: 1,
 					borderColor: '#AAA',
-					y: -6
+					y: -6,
+					format: '{y}'
 				},
 				enableMouseTracking: true
 			}
@@ -102,13 +107,13 @@
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#dd402e',  
-					data: gameResultTeam1              
+					data: gameOFFTeam1              
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#323232',  
-					data: gameResultTeam2              
+					data: gameOFFTeam2              
 				});  
 			}
 
@@ -126,13 +131,13 @@
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#dd402e',  
-				    data: gameResultTeam1             
+				    data: gameDEFTeam1             
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
 					color: '#323232',  
-				    data: gameResultTeam2             
+				    data: gameDEFTeam2             
 				});  
 			}
 

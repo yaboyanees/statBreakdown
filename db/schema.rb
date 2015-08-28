@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150811220606) do
   enable_extension "plpgsql"
 
   create_table "stats", force: :cascade do |t|
+    t.integer  "year"
     t.integer  "week"
     t.float    "GameMean"
     t.float    "Season2dateMean"
@@ -33,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150811220606) do
     t.integer  "diff"
     t.string   "team1"
     t.string   "team2"
+    t.string   "short1"
+    t.string   "short2"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

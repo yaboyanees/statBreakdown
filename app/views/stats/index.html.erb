@@ -11,6 +11,7 @@
 <table>
   <thead>
     <tr>
+      <th>Year</th>
       <th>Week</th>
       <th>Game Mean</th>
       <th>Season Mean</th>
@@ -27,12 +28,15 @@
       <th>Diff</th>
       <th>Team1</th>
       <th>Team2</th>
+      <th>Abbr1</th>
+      <th>Abbr2</th>
     </tr>
   </thead>
 
   <tbody>
     <% @stats.each do |stat| %>
       <tr>
+        <td><%= stat.year %></td>
         <td><%= stat.week %></td>
         <td><%= stat.GameMean %></td>
         <td><%= stat.Season2dateMean %></td>
@@ -49,6 +53,8 @@
         <td><%= stat.diff %></td>
         <td><%= stat.team1 %></td>
         <td><%= stat.team2 %></td>
+        <td><%= stat.short1 %></td>
+        <td><%= stat.short2 %></td>
       </tr>
     <% end %>
   </tbody>
