@@ -11,7 +11,6 @@ class HomeController < ApplicationController
  			@team1defVal = @team1.pluck("DEFGameMean")
  			@team1s2dm = @team1.pluck("Season2dateMean")
  			@team1name = @team1.uniq.pluck("team1")
-#  			@team1result = @team1.pluck("win")
  			@team1current = @team1.pluck("CurrentMeanTrend").last
 
  			@team2 = Stat.search(params[:secondTeam])
@@ -24,8 +23,8 @@ class HomeController < ApplicationController
  			@team2s2dm = @team2.pluck("Season2dateMean")
  			@team2current = @team2.pluck("CurrentMeanTrend").last
  			
- 			@teamValue1 = @team1.pluck("Season2dateOFFMean", "Season2dateMean", "Season2dateDEFMean").last
- 			@teamValue2 = @team2.pluck("Season2dateOFFMean", "Season2dateMean", "Season2dateDEFMean").last
+ 			@teamValue1 = @team1.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean").last
+ 			@teamValue2 = @team2.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean").last
  			
  			@a = Stat.pluck("week").last
  			@b = Stat.all
