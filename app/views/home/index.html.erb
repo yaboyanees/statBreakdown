@@ -8,6 +8,57 @@
 		<input class="transform" name="newSeries" type="radio" value="b"> Offense</input>
 		<input class="transform" name="newSeries" type="radio" value="c"> Defense</input>
 	</div>
+	<div id="teamTable">
+		<div id="team1Table">	
+			<table cellspacing='0'> 
+				<thead>
+					<tr>
+						<th colspan="3"><%= @team1name.first %></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @team1CurrentStat.each do |t1| %>
+						<% if t1[5].nil? %>
+						<tr>
+							<td>Wk <%= t1[1] %>:</td>
+							<td colspan="2"><%= t1[2] %></td>
+						</tr>	
+						<% else %>
+						<tr>
+							<td>Wk <%= t1[1] %>:</td>
+							<td colspan="2"><%= t1[2] %> <%= t1[4] %>-<%= t1[5] %> vs <%= t1[3] %></td>
+						</tr>					
+						<% end %>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+		<div id="team2Table">	  
+			<table cellspacing='0'> 
+				<thead>
+					<tr>
+						<th colspan="3"><%= @team2name.first %></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @team2CurrentStat.each do |t2| %>
+						<% if t2[5].nil? %>
+						<tr>
+							<td>Wk <%= t2[1] %>:</td>
+							<td colspan="2"><%= t2[2] %></td>
+						</tr>	
+						<% else %>
+						<tr>
+							<td>Wk <%= t2[1] %>:</td>
+							<td colspan="2"><%= t2[2] %> <%= t2[4] %>-<%= t2[5] %> vs <%= t2[3] %></td>
+						</tr>					
+						<% end %>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br style="clear:both" />
 	<div id="column"></div>
 	<div id="scatter"></div>
 	<p class="newMatch"><%= link_to 'New Matchup', root_path %></p>
