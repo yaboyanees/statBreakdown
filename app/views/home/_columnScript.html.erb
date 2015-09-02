@@ -5,23 +5,14 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)',
-            style: {
-				fontSize:'2vmax'
-			}
-        },
-        subtitle: {
-            text: 'Advantage Value: <%= r = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>',
-			style: {
-				fontSize:'1.7vmax'
-			}
+            text: '',
         },
 		xAxis: {
 			categories: ['Team', 'Offense', 'Defense']
 		},
 		yAxis: {
 			title: {
-				text: 'Performance',
+				text: 'Season Long Performance',
 				style: {
                     fontSize:'1.7vmax',
                 }
@@ -30,11 +21,11 @@ $(function () {
         series: [{
             name: '<%= @team1name.first.gsub('"','') %>',
             data: <%= @teamValue1 %>,
-            color: '#dd402e'
+            color: '#006E29'
         }, {
             name: '<%= @team2name.first.gsub('"','') %>',
             data: <%= @teamValue2 %>,
-            color: '#323232'
+            color: '#333333'
         }]
     });
 });

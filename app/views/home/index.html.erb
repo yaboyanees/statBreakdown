@@ -20,13 +20,13 @@
 					<% @team1CurrentStat.each do |t1| %>
 						<% if t1[5].nil? %>
 						<tr>
-							<td>Wk <%= t1[1] %>:</td>
-							<td colspan="2"><%= t1[2] %></td>
+							<td><i>Wk <%= t1[1] %></i>:</td>
+							<td colspan="2"><b><%= t1[2] %></b></td>
 						</tr>	
 						<% else %>
 						<tr>
-							<td>Wk <%= t1[1] %>:</td>
-							<td colspan="2"><%= t1[2] %> <%= t1[4] %>-<%= t1[5] %> vs <%= t1[3] %></td>
+							<td><i>Wk <%= t1[1] %></i>:</td>
+							<td colspan="2"><b><%= t1[2] %></b> <%= t1[4] %>-<%= t1[5] %> vs <%= t1[3] %></td>
 						</tr>					
 						<% end %>
 					<% end %>
@@ -44,13 +44,13 @@
 					<% @team2CurrentStat.each do |t2| %>
 						<% if t2[5].nil? %>
 						<tr>
-							<td>Wk <%= t2[1] %>:</td>
-							<td colspan="2"><%= t2[2] %></td>
+							<td><i>Wk <%= t2[1] %></i>:</td>
+							<td colspan="2"><b><%= t2[2] %></b></td>
 						</tr>	
 						<% else %>
 						<tr>
-							<td>Wk <%= t2[1] %>:</td>
-							<td colspan="2"><%= t2[2] %> <%= t2[4] %>-<%= t2[5] %> vs <%= t2[3] %></td>
+							<td><i>Wk <%= t2[1] %></i>:</td>
+							<td colspan="2"><b><%= t2[2] %></b> <%= t2[4] %>-<%= t2[5] %> vs <%= t2[3] %></td>
 						</tr>					
 						<% end %>
 					<% end %>
@@ -63,10 +63,21 @@
 	<div id="scatter"></div>
 	<p class="newMatch"><%= link_to 'New Matchup', root_path %></p>
 <% else %>
-	<%= form_tag(root_path, :method => "get", id: "search-form") do %>
-  		<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %>
-  		<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team 2' %><br /><br />
-		<%= submit_tag "View Matchup", :name => nil %>
-	<% end %>
+	<div id="teamMatchup">
+		<h2>Select Matchup</h2>
+		<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team' %>
+			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team' %><br /><br />
+			<%= submit_tag "View Matchup", :name => nil %>
+		<% end %>
+	</div>
+	<div id="teamPortfolio">
+		<h2>View Portfolio</h2>
+		<div id="indy_team">
+		<% @teamNames.each do |tn| %>
+			<p class="team_name"><%= link_to tn, home_path(:id => tn) %></p>
+		<% end %>
+		</div>
+	</div>
 <% end %>
 

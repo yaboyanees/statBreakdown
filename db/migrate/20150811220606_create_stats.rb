@@ -29,3 +29,4 @@ class CreateStats < ActiveRecord::Migration
     end
   end
 end
+

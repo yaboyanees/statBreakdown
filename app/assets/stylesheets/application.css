@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+html{
+	overflow-x:hidden;
+}
 table{
     text-align: center;
 }

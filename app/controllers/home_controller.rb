@@ -42,7 +42,7 @@ class HomeController < ApplicationController
  			#return current season2date values by team
  				@teamOrder = @all.group("id", "team1").order("team1")
  				@currentData = @teamOrder.where("week = ?", @week).where("year = ?", @year)
- 			@teamValues = @currentData.pluck("Season2dateOFFMean", "Season2dateMean", "Season2dateDEFMean")
+ 			@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
 
  		else
  			@stats = Stat.all
@@ -52,7 +52,8 @@ class HomeController < ApplicationController
 	
 	def show
 		@stats = Stat.all
-		@team1 = @stats.select("id", "teamMean", "teamTrendMean", "offMean", "offTrendMean", "defMean", "defTrendMean", "win", "team1pts", "diff", "team1")
+		@teamNames = @stats.order(:team1).uniq.pluck(:team1)
+		@rollup = @stats.pluck("year", "week", "GameMean", "Season2dateMean", "CurrentMeanTrend", "OFFGameMean", "Season2dateOFFMean", "CurrentOFFMeanTrend", "DEFGameMean", "Season2dateDEFMean", "CurrentDEFMeanTrend", "win", "team1pts", "team2pts", "diff", "team1", "team2", "short1", "short2")
 	end
   
 end

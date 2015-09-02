@@ -19,7 +19,7 @@
 			}
 		},
 		subtitle: {
-			text: 'Performance By Week',
+			text: 'Game Performance By Week',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -27,7 +27,6 @@
 		xAxis: {
 			categories: <%= @team1wk  %>,
 			title: {
-				text: 'Game Weeks',
 				style: {
                     fontSize:'1.7vmax',
                 }
@@ -35,7 +34,7 @@
 		},
 		yAxis: {
 			title: {
-				text: 'Performance',
+				text: '',
 				style: {
                     fontSize:'1.7vmax',
                 }
@@ -51,11 +50,11 @@
 		},
 		series: [{
 			name: '<%= @team1name.first.gsub('"','') %>',
-			color: '#dd402e',
+			color: '#006E29',
 			data: gameResultTeam1
 		}, {
 			name: '<%= @team2name.first.gsub('"','') %>',
-			color: '#323232',
+			color: '#333333',
 			data: gameResultTeam2
 		}]
 	});
@@ -70,18 +69,18 @@
 					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Advantage Value: <%= u = ((@team1s2dm.last) - (@team2s2dm.last)).round(3) %>'
+					text: 'Game Performance By Week'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#dd402e',  
+					color: '#006E29',  
 				    data: gameResultTeam1             
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#323232',  
+					color: '#333333',  
 				    data: gameResultTeam2              
 				});  
 			}
@@ -95,18 +94,18 @@
 					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1offVal.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2offVal.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Advantage Value: <%= s = ((@team1offVal.last) - (@team2offVal.last)).round(3) %>'
+					text: 'Game Performance By Week'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#dd402e',  
+					color: '#006E29',  
 					data: gameOFFTeam1              
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#323232',  
+					color: '#333333',  
 					data: gameOFFTeam2              
 				});  
 			}
@@ -119,18 +118,18 @@
 					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1defVal.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2defVal.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Advantage Value: <%= t = ((@team1defVal.last) - (@team2defVal.last)).round(3) %>'
+					text: 'Game Performance By Week'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#dd402e',  
+					color: '#006E29',  
 				    data: gameDEFTeam1             
 				});   
 				chart.addSeries({
 					name: '<%= @team2name.first.gsub('"','') %>',
 					type: 'line',
-					color: '#323232',  
+					color: '#333333',  
 				    data: gameDEFTeam2             
 				});  
 			}
