@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 		collection { post :import }
 		collection { delete :kill }
 	end
-
+	
 end

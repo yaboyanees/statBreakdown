@@ -14,9 +14,9 @@ class HomeController < ApplicationController
  			@year = Stat.pluck("year").first
 
 			#return most recent table values for team1 + team2 in array
- 			@statArrayTeam1 = @team1.where("year = ?", @year).pluck("year", "week", "win", "team2", "team1pts", "team2pts")
+ 			@statArrayTeam1 = @team1.where("year = ?", @year).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
  			@team1CurrentStat = @statArrayTeam1.to_a
- 			@statArrayTeam2 = @team2.where("year = ?", @year).pluck("year", "week", "win", "team2", "team1pts", "team2pts")
+ 			@statArrayTeam2 = @team2.where("year = ?", @year).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
  			@team2CurrentStat = @statArrayTeam2.to_a
  			
 			#return team1 + team2 data arrays
@@ -53,7 +53,11 @@ class HomeController < ApplicationController
 	def show
 		@stats = Stat.all
 		@teamNames = @stats.order(:team1).uniq.pluck(:team1)
-		@rollup = @stats.pluck("year", "week", "GameMean", "Season2dateMean", "CurrentMeanTrend", "OFFGameMean", "Season2dateOFFMean", "CurrentOFFMeanTrend", "DEFGameMean", "Season2dateDEFMean", "CurrentDEFMeanTrend", "win", "team1pts", "team2pts", "diff", "team1", "team2", "short1", "short2")
+		@rollup = @stats.pluck("year", "week", "GameMean", "Season2dateMean", "CurrentMeanTrend", "OFFGameMean", "Season2dateOFFMean", "CurrentOFFMeanTrend", "DEFGameMean", "Season2dateDEFMean", "CurrentDEFMeanTrend", "win", "team1pts", "team2pts", "diff", "team1", "team2", "short1", "short2", "url")
+	end
+	
+	def edit
+		@stat = Stat.find(params[:id])
 	end
   
 end

@@ -25,6 +25,8 @@ class CreateStats < ActiveRecord::Migration
       t.string 	:short1
       t.string 	:short2
       
+      t.string 	:url
+      
       t.timestamps null: false
     end
   end

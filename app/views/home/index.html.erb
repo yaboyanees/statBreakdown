@@ -21,12 +21,14 @@
 						<% if t1[5].nil? %>
 						<tr>
 							<td><i>Wk <%= t1[1] %></i>:</td>
-							<td colspan="2"><b><%= t1[2] %></b></td>
+							<td ><b><%= t1[2] %></b></td>
+							<td></td>
 						</tr>	
 						<% else %>
 						<tr>
-							<td><i>Wk <%= t1[1] %></i>:</td>
-							<td colspan="2"><b><%= t1[2] %></b> <%= t1[4] %>-<%= t1[5] %> vs <%= t1[3] %></td>
+							<td><i>Wk <%= t1[1] %></i>:</td>	
+							<td><b><%= t1[2] %></b> <%= t1[4] %>-<%= t1[5] %> vs <%= t1[3] %></td>
+							<td><%= link_to 'Game Map', edit_home_path(:id => t1[6]) %></td>
 						</tr>					
 						<% end %>
 					<% end %>
@@ -45,12 +47,14 @@
 						<% if t2[5].nil? %>
 						<tr>
 							<td><i>Wk <%= t2[1] %></i>:</td>
-							<td colspan="2"><b><%= t2[2] %></b></td>
+							<td><b><%= t2[2] %></b></td>
+							<td></td>
 						</tr>	
 						<% else %>
 						<tr>
 							<td><i>Wk <%= t2[1] %></i>:</td>
-							<td colspan="2"><b><%= t2[2] %></b> <%= t2[4] %>-<%= t2[5] %> vs <%= t2[3] %></td>
+							<td><b><%= t2[2] %></b> <%= t2[4] %>-<%= t2[5] %> vs <%= t2[3] %></td>
+							<td><%= link_to 'Game Map', edit_home_path(:id => t2[6]) %></td>
 						</tr>					
 						<% end %>
 					<% end %>
