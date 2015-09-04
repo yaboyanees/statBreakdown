@@ -1,0 +1,50 @@
+<script type="text/javascript">
+$(function () {
+	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>]
+	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>]
+    var leagueArray = [<%= raw @leagueOPts2011 %>, <%= raw @leagueOPts2012 %>, <%= raw @leagueOPts2013 %>, <%= raw @leagueOPts2014 %>]
+    $('#points').highcharts({  
+		title: {
+			text: '',
+		},
+		subtitle: {
+			text: 'Scored vs Allowed Points',
+			style: {
+				fontSize:'1.7vmax'
+			}
+		},
+        xAxis: {
+            categories: ['2011', '2012', '2013', '2014']
+        },
+		yAxis: {
+			title: {
+				text: 'Points',
+				style: {
+                    fontSize:'1.7vmax'
+                }
+            }
+		},
+        series: [{
+            type: 'column',
+            name: 'Scored Pts',
+            color: '#006E29',
+            data: oArray
+        }, {
+            type: 'column',
+            name: 'Allowed Pts',
+            color: '#333333',
+            data: dArray
+        }, {
+            type: 'spline',
+            name: 'League Scored Pts Average',
+            data: leagueArray,
+            color: '#08aeff',
+            marker: {
+                lineWidth: 2,
+                lineColor: '#006E29',
+                fillColor: '#08aeff'
+            }
+        }]
+    });
+});
+</script>

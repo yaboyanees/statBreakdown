@@ -1,51 +1,36 @@
-<h2><%= @teamNames.join('') %></h2>
+<div id="record">
+	<div id="recordTable">	
+		<table cellspacing='0'> 
+			<thead>
+				<tr>
+					<th colspan="4"><%= @teamNames.join('') %></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2011</td>
+					<td>2012</td>
+					<td>2013</td>
+					<td>2014</td>
+				</tr>
+				<tr>
+					<td><%= @win11 %>-<%= @loss11 %></td>
+					<td><%= @win12 %>-<%= @loss12 %></td>
+					<td><%= @win13 %>-<%= @loss13 %></td>
+					<td><%= @win14 %>-<%= @loss14 %></td>
+				</tr>	
+			</tbody>
+		</table>
+	</div>
+</div>
 
-<div id="points" style="max-width: 50%; height: 40%; float:left;"></div>
-<div id="points2" style="max-width: 50%; height: 40%; float:left;"></div>
-
-<script type="text/javascript">
-$(function () {
-	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>]
-	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>]
-    $('#points').highcharts({
-        title: {
-            text: 'Points Scored vs Points Against'
-        },
-        xAxis: {
-            categories: ['2011', '2012', '2013', '2014']
-        },
-        series: [{
-            type: 'column',
-            name: 'Points For',
-            data: oArray
-        }, {
-            type: 'column',
-            name: 'Points Against',
-            data: dArray
-        }]
-    });
-});
-</script>
-<script type="text/javascript">
-$(function () {
-	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>]
-	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>]
-    $('#points2').highcharts({
-        title: {
-            text: 'Points Scored vs Points Against'
-        },
-        xAxis: {
-            categories: ['2011', '2012', '2013', '2014']
-        },
-        series: [{
-            type: 'column',
-            name: 'Points For',
-            data: oArray
-        }, {
-            type: 'column',
-            name: 'Points Against',
-            data: dArray
-        }]
-    });
-});
-</script>
+<%= render partial: 'pointsScript' %>
+<%= render partial: 'diffScript' %>
+<div id="points" style="width: 47%; float: left;"></div>
+<div id="diff" style="width: 47%; float: left;"></div>
+<div id="diffDiv">
+	<input class="difference" name="newSeries" type="radio" value="a"> 2014</input>
+	<input class="difference" name="newSeries" type="radio" value="b"> 2013</input>
+	<input class="difference" name="newSeries" type="radio" value="c"> 2012</input>
+	<input class="difference" name="newSeries" type="radio" value="d"> 2011</input>
+</div>

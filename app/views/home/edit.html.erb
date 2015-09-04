@@ -1,16 +1,1 @@
 <%= image_tag(@stat.url) %>
-
-<% @teamNames.each do |t| %>
-	<% if params[:id].to_s == t.to_s %>
-		<h1><%= t %></h1>
-
-		<%= @teamPts2014.average("team1pts").round %>
-		<%= @opponentPts2014.average("team2pts").round %>
-		<%= @teamPts2013.average("team1pts").round%>
-		<%= @opponentPts2013.average("team1pts").round %>
-		<%= @teamPts2012.average("team1pts").round %>
-		<%= @opponentPts2012.average("team1pts").round %>
-		<%= @teamPts2011.average("team1pts").round %>
-		<%= @opponentPts2011.average("team1pts").round %>
-	<% end %>
-<% end %>
