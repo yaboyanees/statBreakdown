@@ -1,7 +1,51 @@
-<% @teamNames.each do |t| %>
-	<% if params[:id].to_s == t.to_s %>
-		<h1><%= t %></h1>
-		<%= @rollup %>
-	<% end %>
-<% end %>
+<h2><%= @teamNames.join('') %></h2>
 
+<div id="points" style="max-width: 50%; height: 40%; float:left;"></div>
+<div id="points2" style="max-width: 50%; height: 40%; float:left;"></div>
+
+<script type="text/javascript">
+$(function () {
+	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>]
+	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>]
+    $('#points').highcharts({
+        title: {
+            text: 'Points Scored vs Points Against'
+        },
+        xAxis: {
+            categories: ['2011', '2012', '2013', '2014']
+        },
+        series: [{
+            type: 'column',
+            name: 'Points For',
+            data: oArray
+        }, {
+            type: 'column',
+            name: 'Points Against',
+            data: dArray
+        }]
+    });
+});
+</script>
+<script type="text/javascript">
+$(function () {
+	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>]
+	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>]
+    $('#points2').highcharts({
+        title: {
+            text: 'Points Scored vs Points Against'
+        },
+        xAxis: {
+            categories: ['2011', '2012', '2013', '2014']
+        },
+        series: [{
+            type: 'column',
+            name: 'Points For',
+            data: oArray
+        }, {
+            type: 'column',
+            name: 'Points Against',
+            data: dArray
+        }]
+    });
+});
+</script>

@@ -51,9 +51,25 @@ class HomeController < ApplicationController
 	end
 	
 	def show
-		@stats = Stat.all
-		@teamNames = @stats.order(:team1).uniq.pluck(:team1)
-		@rollup = @stats.pluck("year", "week", "GameMean", "Season2dateMean", "CurrentMeanTrend", "OFFGameMean", "Season2dateOFFMean", "CurrentOFFMeanTrend", "DEFGameMean", "Season2dateDEFMean", "CurrentDEFMeanTrend", "win", "team1pts", "team2pts", "diff", "team1", "team2", "short1", "short2", "url")
+		if params[:id]
+		 	@team1 = Stat.search(params[:id]) 
+		 	@team2 = @team1.pluck("team2")
+ 			@teamNames = @team1.uniq.pluck("team1") 
+			
+			#return array of all teams data
+			@rollup = @team1.pluck("year", "week", "GameMean", "Season2dateMean", "CurrentMeanTrend", "OFFGameMean", "Season2dateOFFMean", "CurrentOFFMeanTrend", "DEFGameMean", "Season2dateDEFMean", "CurrentDEFMeanTrend", "win", "team1pts", "team2pts", "diff", "team1", "team2", "short1", "short2", "url")
+			
+			#team pt averages by year
+			@teamPts2011 = @team1.where("year = ?", 2011).average("team1pts").round
+			@opponentPts2011 = @team1.where("year = ?", 2011).average("team2pts").round
+			@teamPts2012 = @team1.where("year = ?", 2012).average("team1pts").round
+			@opponentPts2012 = @team1.where("year = ?", 2012).average("team2pts").round
+			@teamPts2013 = @team1.where("year = ?", 2013).average("team1pts").round
+			@opponentPts2013 = @team1.where("year = ?", 2013).average("team2pts").round
+			@teamPts2014 = @team1.where("year = ?", 2014).average("team1pts").round
+			@opponentPts2014 = @team1.where("year = ?", 2014).average("team2pts").round
+		
+		end
 	end
 	
 	def edit

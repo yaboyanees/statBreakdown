@@ -16,7 +16,7 @@ class Stat < ActiveRecord::Base
 # 		end 
 # 		return a
 # 	end
-
+	
 	def self.search(query1)
   		where("team1 like ?", "%#{query1}%")  		
 	end
