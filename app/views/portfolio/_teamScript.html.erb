@@ -1,0 +1,320 @@
+<script type="text/javascript">
+	$(function () {
+		var gameTeam = <%= raw @team1tmAll.to_json %>
+		var gameOFF = <%= raw @team1offAll.to_json %>
+		var gameDEF = <%= raw @team1defAll.to_json %>
+
+		var gameTeam14 = <%= raw @team1tm14.to_json %>
+		var gameOFF14 = <%= raw @team1off14.to_json %>
+		var gameDEF14 = <%= raw @team1def14.to_json %>
+		
+		var gameTeam13 = <%= raw @team1tm13.to_json %>
+		var gameOFF13 = <%= raw @team1off13.to_json %>
+		var gameDEF13 = <%= raw @team1def13.to_json %>
+		
+		var gameTeam12 = <%= raw @team1tm12.to_json %>
+		var gameOFF12 = <%= raw @team1off12.to_json %>
+		var gameDEF12 = <%= raw @team1def12.to_json %>
+		
+		var gameTeam11 = <%= raw @team1tm11.to_json %>
+		var gameOFF11 = <%= raw @team1off11.to_json %>
+		var gameDEF11 = <%= raw @team1def11.to_json %>
+		var chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'teamChart',
+			fontSize:'100%'
+		},
+		title: {
+			text: '',
+			style: {
+				fontSize:'2vmax'
+			}
+		},
+		subtitle: {
+			text: 'Team Performance By Week (2011-2014)',
+			style: {
+				fontSize:'1.7vmax'
+			}
+		},
+		xAxis: {
+			categories: [''],
+			title: {
+				style: {
+                    fontSize:'1.7vmax',
+                }
+			}
+		},
+		yAxis: {
+			title: {
+				text: '',
+				style: {
+                    fontSize:'1.7vmax',
+                }
+			}
+		},
+		plotOptions: {
+			series: {
+                marker: {
+                    radius: 5
+                }
+            },
+			line: {
+				dataLabels: {
+					enabled: false,
+				},
+				enableMouseTracking: true
+			}
+		},
+		tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+		series: [{
+			type: 'spline',
+			name: 'Team',
+			color: '#006E29',
+			data: gameTeam,
+			marker: {
+                symbol: 'circle'
+            },
+		}, {
+			type: 'spline',
+			name: 'Offense',
+			color: '#333333',
+			data: gameOFF,
+			marker: {
+                symbol: 'triangle'
+            },
+		}, {
+			type: 'spline',
+			name: 'Defense',
+			color: '#08aeff',
+			data: gameDEF,
+			marker: {
+                symbol: 'triangle-down'
+            },	
+		}]
+	});
+		$(".rollup").change(function() {
+			var value = this.getAttribute("value");
+
+			if (value == 'a') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Team Performance By Week (2014)'
+				});
+				chart.xAxis[0].update({
+					categories: <%= @team1wk  %>
+				});
+				chart.addSeries({
+					name: 'Team',
+					type: 'spline',
+					color: '#006E29',  
+				    data: gameTeam14,
+					marker: {
+						symbol: 'circle'
+					},             
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					type: 'spline',
+					color: '#333333',  
+				    data: gameOFF14,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					type: 'spline',
+					color: '#08aeff',  
+				    data: gameDEF14,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				});   
+			}
+
+			else if (value == 'b') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Team Performance By Week (2013)'
+				});
+				chart.xAxis[0].update({
+					categories: <%= @team1wk  %>
+				});
+				chart.addSeries({
+					name: 'Team',
+					type: 'spline',
+					color: '#006E29',  
+				    data: gameTeam13,
+					marker: {
+						symbol: 'circle'
+					},                  
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					type: 'spline',
+					color: '#333333',  
+				    data: gameOFF13,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					type: 'spline',
+					color: '#08aeff',  
+				    data: gameDEF13,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				});   
+			}
+
+			else if (value == 'c') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Team Performance By Week (2012)'
+				});
+				chart.xAxis[0].update({
+					categories: <%= @team1wk  %>
+				});
+				chart.addSeries({
+					name: 'Team',
+					type: 'spline',
+					color: '#006E29',  
+				    data: gameTeam12,
+					marker: {
+						symbol: 'circle'
+					},                 
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					type: 'spline',
+					color: '#333333',  
+				    data: gameOFF12,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					type: 'spline',
+					color: '#08aeff',  
+				    data: gameDEF12,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				});   
+			}
+
+			else if (value == 'd') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Team Performance By Week (2011)'
+				});
+				chart.xAxis[0].update({
+					categories: <%= @team1wk  %>
+				});
+				chart.addSeries({
+					name: 'Team',
+					type: 'spline',
+					color: '#006E29',  
+				    data: gameTeam11,
+					marker: {
+						symbol: 'circle'
+					},                  
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					type: 'spline',
+					color: '#333333',  
+				    data: gameOFF11,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					type: 'spline',
+					color: '#08aeff',  
+				    data: gameDEF11,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				});   
+			}
+			
+			else if (value == 'e') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Team Performance By Week (2011-2014)'
+				});
+				chart.xAxis[0].update({
+					categories: ['']
+				});
+				chart.addSeries({
+					name: 'Team',
+					type: 'spline',
+					color: '#006E29',  
+				    data: gameTeam,
+					marker: {
+						symbol: 'circle'
+					},                  
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					type: 'spline',
+					color: '#333333',  
+				    data: gameOFF,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					type: 'spline',
+					color: '#08aeff',  
+				    data: gameDEF,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				});   
+			}
+			else {
+			   alert("Error!");   
+			}
+		});
+	});
+</script>

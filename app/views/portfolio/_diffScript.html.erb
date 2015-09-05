@@ -1,0 +1,211 @@
+<script type="text/javascript">
+	$(function () {
+		var winArray14 = <%= raw @winValue14.to_json %>
+		var lossArray14 = <%= raw @lossValue14.to_json %>
+		var winArray13 = <%= raw @winValue13.to_json %>
+		var lossArray13 = <%= raw @lossValue13.to_json %>
+		var winArray12 = <%= raw @winValue12.to_json %>
+		var lossArray12 = <%= raw @lossValue12.to_json %>
+		var winArray11 = <%= raw @winValue11.to_json %>
+		var lossArray11 = <%= raw @lossValue11.to_json %>
+		var chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'diff',
+			type: 'scatter',
+			fontSize:'100%'
+		},
+		title: {
+			text: '',
+			style: {
+				fontSize:'2vmax'
+			}
+		},
+		subtitle: {
+			text: 'Win vs Loss PT Differential By Week (2014)',
+			style: {
+				fontSize:'1.7vmax'
+			}
+		},
+		xAxis: {
+			categories: [''],
+			title: {
+				style: {
+                    fontSize:'1.7vmax',
+                }
+			}
+		},
+		yAxis: {
+		    min: 0,
+            max: 50,
+            tickInterval: 5,
+            lineWidth: 1,
+			title: {
+				text: 'Points',
+				style: {
+                    fontSize:'1.7vmax',
+                }
+			}
+		},
+		tooltip: {
+			formatter: function() {
+				return '<i>' + this.series.name + '</i>' + ' by ' + '<b>' + this.y + '</b>';
+			}
+		},
+		plotOptions: {
+			series: {
+                marker: {
+                    radius: 8
+                }
+            },
+			line: {
+				dataLabels: {
+					enabled: false,
+				},
+				enableMouseTracking: true
+			}
+		},
+		series: [{
+			name: 'WIN',
+			color: '#006E29',
+			data: winArray14,
+			marker: {
+                symbol: 'triangle'
+            },
+		}, {
+			name: 'LOSS',
+			color: '#333333',
+			data: lossArray14,
+			marker: {
+                symbol: 'triangle-down'
+            },
+		}]
+	});
+		$(".difference").change(function() {
+			var value = this.getAttribute("value");
+
+			if (value == 'a') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Win vs Loss PT Differential By Week (2014)'
+				});
+				chart.addSeries({
+					name: 'WIN',
+					type: 'scatter',
+					color: '#006E29',  
+				    data: winArray14,
+					marker: {
+						symbol: 'triangle'
+					},            
+				});   
+				chart.addSeries({
+					name: 'LOSS',
+					type: 'scatter',
+					color: '#333333',  
+				    data: lossArray14,
+					marker: {
+						symbol: 'triangle-down'
+					},            
+				});               
+			}
+
+
+			else if (value == 'b') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Win vs Loss PT Differential By Week (2013)'
+				});
+				chart.addSeries({
+					name: 'WIN',
+					type: 'scatter',
+					color: '#006E29',  
+				    data: winArray13,
+					marker: {
+						symbol: 'triangle'
+					},            
+				});                 
+				chart.addSeries({
+					name: 'LOSS',
+					type: 'scatter',
+					color: '#333333',  
+				    data: lossArray13,
+					marker: {
+						symbol: 'triangle-down'
+					},            
+				});               
+			}
+			
+			else if (value == 'c') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Win vs Loss PT Differential By Week (2012)'
+				});
+				chart.addSeries({
+					name: 'WIN',
+					type: 'scatter',
+					color: '#006E29',  
+				    data: winArray12,
+					marker: {
+						symbol: 'triangle'
+					},            
+				});              
+				chart.addSeries({
+					name: 'LOSS',
+					type: 'scatter',
+					color: '#333333',  
+				    data: lossArray12,
+					marker: {
+						symbol: 'triangle-down'
+					},            
+				});           
+			}
+			
+			else if (value == 'd') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Win vs Loss PT Differential By Week (2011)'
+				});
+				chart.addSeries({
+					name: 'WIN',
+					type: 'scatter',
+					color: '#006E29',  
+				    data: winArray11,
+					marker: {
+						symbol: 'triangle'
+					},            
+				});               
+				chart.addSeries({
+					name: 'LOSS',
+					type: 'scatter',
+					color: '#333333',  
+				    data: lossArray11,
+					marker: {
+						symbol: 'triangle-down'
+					},            
+				});             
+			}
+			else {
+			   alert("Error!");   
+			}
+		});
+	});
+</script>

@@ -1,0 +1,8 @@
+<div id="teamPortfolio">
+	<h2>View Portfolio</h2>
+	<div id="indy_team">
+	<% @teamNames.each do |tn| %>
+		<p class="team_name"><%= link_to tn, portfolio_path(:id => tn) %></p>
+	<% end %>
+	</div>
+</div>

@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #teamMatchup {
-	background-color: #006E29;
-	color: #fff;
+	color: #333333;
 	padding: 5% 0 0 0;
 	height: 38%;
 	h2 {
@@ -44,59 +43,10 @@
 		}
 	}
 }
-#teamPortfolio {
-	background-color: #333333;
-	float:left;
-	height: 60%;
-	h2 {
-		text-align: center;
-		font-weight: bold;
-		padding: 3% 2% 3% 2%;
-		font-size: 6.5vmax;
-		margin: 0;
-		line-height: 38px;
-		color: #fff;
-	}	
-	#indy_team{
-		float:left;
-		margin: 0;
-		margin-left: 3px;
-		padding: 5px 0;
-		.team_name {
-			font-size: 22px;
-			color: black;
-			margin:0;
-			float:left;
-			padding: 25px 5px 20px 20px;
-			width: 290px;
-			a{
-				text-decoration:none;
-			}
-			a:visited {
-				color: black;
-			}
-			a:hover {
-				text-decoration:none;
-				background-color: transparent;
-				color: black;
-			}
-		}
-	}
-	.team_name:nth-child(even){
-		background-color: #f6f6f6;
-	}
-	.team_name:nth-child(odd){
-		background-color: #fff;
-	}
-}
 
 #transform{
 	text-align: center;
 	padding: 0 0 30px 0;
-}
-#diffDiv{
-	text-align: left;
-	padding: 130px 0 30px 0;
 }
 .newMatch {
 	width: 100px;

@@ -5,7 +5,7 @@ class StatsController < ApplicationController
   # GET /stats
   # GET /stats.json
   def index
-    @stats = Stat.all
+    @stats = Stat.all.count
   end
   
   def show
@@ -16,21 +16,14 @@ class StatsController < ApplicationController
   
   def import
   	Stat.import(params[:file])
-  	redirect_to stats_url
+    respond_to do |format|
+      format.html { redirect_to stats_url, notice: 'Successful Upload!' }
+      format.json { head :no_content }
+    end
   end
 
   def create
     @stat = Stat.new(stat_params)
-	redirect_to stats_url
-
-  end
-
-  def destroy
-    @stat.destroy
-    respond_to do |format|
-      format.html { redirect_to stats_url, notice: 'Stat was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   def kill
@@ -38,7 +31,10 @@ class StatsController < ApplicationController
     @stat.each do |t|
     	t.destroy
     end
-    redirect_to stats_url
+    respond_to do |format|
+      format.html { redirect_to stats_url, notice: 'Successful Deletion!' }
+      format.json { head :no_content }
+    end
   end
 
   private

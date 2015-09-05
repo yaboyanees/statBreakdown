@@ -1,5 +1,7 @@
 class Stat < ActiveRecord::Base
 
+#	validates_presence_of :firstTeam, :secondTeam
+
 	def self.import(file)
 	  CSV.foreach(file.path, headers: true) do |row|
 		Stat.create! row.to_hash

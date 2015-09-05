@@ -1,55 +1,10 @@
-<h1>Listing Stats</h1>
+<h1>Upload Stats</h1>
 <%= form_tag import_stats_path, multipart: true do %>
 	<%= file_field_tag :file %>
-	<%= submit_tag "Upload", direct: true %>
+	<%= submit_tag "Upload" %>
 <% end %>
-
+ <p class="notice"><%= notice %></p>
+ <p>Currently <b><%= @stats %></b> Records in the DB</p>
 <br />
-<%= link_to 'Home', root_path %> | <%= link_to 'Reset All', kill_stats_url, :method => :delete, :confirm => "CLICK OK TO RESET!" %>
+<%= link_to 'Reset All', kill_stats_url, :method => :delete %>
 <br />
-
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Week</th>
-      <th>Game</th>
-      <th>Season</th>
-      <th>Current</th>
-      <th>OFF</th>
-      <th>Season OFF </th>
-      <th>Cum OFF</th>
-      <th>DEF</th>
-      <th>Season DEF</th>
-      <th>Cum DEF</th>
-      <th>Win</th>
-      <th>Score</th>
-      <th>Team1</th>
-      <th>Team2</th>
-      <th>url</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stats.each do |stat| %>
-      <tr>
-        <td><%= stat.year %></td>
-        <td><%= stat.week %></td>
-        <td><%= stat.GameMean %></td>
-        <td><%= stat.Season2dateMean %></td>
-        <td><%= stat.CurrentMeanTrend %></td>
-        <td><%= stat.OFFGameMean %></td>
-        <td><%= stat.Season2dateOFFMean %></td>
-        <td><%= stat.CurrentOFFMeanTrend %></td>
-        <td><%= stat.DEFGameMean %></td>
-        <td><%= stat.Season2dateDEFMean %></td>
-        <td><%= stat.CurrentDEFMeanTrend %></td>
-        <td><%= stat.win %></td>
-        <td><%= stat.team1pts %>-<%= stat.team2pts %></td>
-        <td><%= stat.team1 %></td>
-        <td><%= stat.team2 %></td>
-        <td><%= stat.url %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

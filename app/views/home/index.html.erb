@@ -28,7 +28,7 @@
 						<tr>
 							<td><i>Wk <%= t1[1] %></i>:</td>	
 							<td><b><%= t1[2] %></b> <%= t1[4] %>-<%= t1[5] %> vs <%= t1[3] %></td>
-							<td><%= link_to 'Game Map', edit_home_path(:id => t1[6]) %></td>
+							<td><%= link_to 'Game Map', home_path(:id => t1[6]) %></td>
 						</tr>					
 						<% end %>
 					<% end %>
@@ -74,13 +74,5 @@
 			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team' %><br /><br />
 			<%= submit_tag "View Matchup", :name => nil %>
 		<% end %>
-	</div>
-	<div id="teamPortfolio">
-		<h2>View Portfolio</h2>
-		<div id="indy_team">
-		<% @teamNames.each do |tn| %>
-			<p class="team_name"><%= link_to tn, home_path(:id => tn) %></p>
-		<% end %>
-		</div>
 	</div>
 <% end %>
