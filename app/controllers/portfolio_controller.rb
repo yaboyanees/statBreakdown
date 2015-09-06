@@ -71,6 +71,11 @@ class PortfolioController < ApplicationController
 		@winValue11 = @team1.where("win = ?", 'W').where("year = ?", 2011).pluck("week", "diff")
 		@lossValue11 = @team1.where("win = ?", 'L').where("year = ?", 2011).pluck("week", "diff")
 	
+		#team schedule by season
+		@record14 = @team1.where("year = ?", 2014).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
+		@record13 = @team1.where("year = ?", 2013).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
+		@record12 = @team1.where("year = ?", 2012).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
+		@record11 = @team1.where("year = ?", 2011).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
 	end
   end
 end

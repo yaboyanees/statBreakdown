@@ -1,0 +1,137 @@
+<div id="schedule">
+	<button onclick="show14();return false"/>2014</button>
+	<button onclick="show13();return false"/>2013</button>
+	<button onclick="show12();return false"/>2012</button>
+	<button onclick="show11();return false"/>2011</button>
+	<div id="teamTable14" style="display:block">	
+		<table cellspacing='0'> 
+			<thead>
+				<tr>
+					<th colspan="3">2014 Schedule</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @record14.each do |r14| %>
+					<% if r14[5].nil? %>
+					<tr>
+						<td><i>Wk <%= r14[1] %></i>:</td>
+						<td ><b><%= r14[2] %></b></td>
+						<td></td>
+					</tr>	
+					<% else %>
+					<tr>
+						<td><i>Wk <%= r14[1] %></i>:</td>	
+						<td><b><%= r14[2] %></b> <%= r14[4] %>-<%= r14[5] %> vs <%= r14[3] %></td>
+						<td><%= link_to 'Game Map', home_path(:id => r14[6]) %></td>
+					</tr>					
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div id="teamTable13" style="display:none">	
+		<table cellspacing='0'> 
+			<thead>
+				<tr>
+					<th colspan="3">2013 Schedule</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @record13.each do |r13| %>
+					<% if r13[5].nil? %>
+					<tr>
+						<td><i>Wk <%= r13[1] %></i>:</td>
+						<td ><b><%= r13[2] %></b></td>
+						<td></td>
+					</tr>	
+					<% else %>
+					<tr>
+						<td><i>Wk <%= r13[1] %></i>:</td>	
+						<td><b><%= r13[2] %></b> <%= r13[4] %>-<%= r13[5] %> vs <%= r13[3] %></td>
+						<td><%= link_to 'Game Map', home_path(:id => r13[6]) %></td>
+					</tr>					
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div id="teamTable12" style="display:none">	
+		<table cellspacing='0'> 
+			<thead>
+				<tr>
+					<th colspan="3">2012 Schedule</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @record12.each do |r12| %>
+					<% if r12[5].nil? %>
+					<tr>
+						<td><i>Wk <%= r12[1] %></i>:</td>
+						<td ><b><%= r12[2] %></b></td>
+						<td></td>
+					</tr>	
+					<% else %>
+					<tr>
+						<td><i>Wk <%= r12[1] %></i>:</td>	
+						<td><b><%= r12[2] %></b> <%= r12[4] %>-<%= r12[5] %> vs <%= r12[3] %></td>
+						<td><%= link_to 'Game Map', home_path(:id => r12[6]) %></td>
+					</tr>					
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div id="teamTable11" style="display:none">	
+		<table cellspacing='0'> 
+			<thead>
+				<tr>
+					<th colspan="3">2011 Schedule</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @record11.each do |r11| %>
+					<% if r11[5].nil? %>
+					<tr>
+						<td><i>Wk <%= r11[1] %></i>:</td>
+						<td ><b><%= r11[2] %></b></td>
+						<td></td>
+					</tr>	
+					<% else %>
+					<tr>
+						<td><i>Wk <%= r11[1] %></i>:</td>	
+						<td><b><%= r11[2] %></b> <%= r11[4] %>-<%= r11[5] %> vs <%= r11[3] %></td>
+						<td><%= link_to 'Game Map', home_path(:id => r11[6]) %></td>
+					</tr>					
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script> 
+	function show14() { 
+	document.getElementById("teamTable14").style.display="block"; 
+	document.getElementById("teamTable13").style.display="none"; 
+	document.getElementById("teamTable12").style.display="none"; 
+	document.getElementById("teamTable11").style.display="none"; 
+	} 
+	function show13() { 
+	document.getElementById("teamTable14").style.display="none"; 
+	document.getElementById("teamTable13").style.display="block"; 
+	document.getElementById("teamTable12").style.display="none"; 
+	document.getElementById("teamTable11").style.display="none"; 
+	} 
+	function show12() { 
+	document.getElementById("teamTable14").style.display="none"; 
+	document.getElementById("teamTable13").style.display="none"; 
+	document.getElementById("teamTable12").style.display="block"; 
+	document.getElementById("teamTable11").style.display="none"; 
+	} 
+	function show11() { 
+	document.getElementById("teamTable14").style.display="none"; 
+	document.getElementById("teamTable13").style.display="none"; 
+	document.getElementById("teamTable12").style.display="none"; 
+	document.getElementById("teamTable11").style.display="block"; 
+	} 
+</script>
