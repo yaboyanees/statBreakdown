@@ -13,7 +13,38 @@
 		margin: 0;
 		line-height: 38px;
 		color: #333333;
-	}	
+	}
+ 	#indy_team{
+		float:left;
+		margin: 0;
+		margin-left: 3px;
+		padding: 5px 0;
+		.team_name {
+			font-size: 22px;
+			color: black;
+			margin:0;
+			float:left;
+			padding: 25px 5px 20px 20px;
+			width: 290px;
+			a{
+				text-decoration:none;
+			}
+			a:visited {
+				color: black;
+			}
+			a:hover {
+				text-decoration:none;
+				background-color: transparent;
+				color: black;
+			}
+		}
+	}
+	.team_name:nth-child(even){
+		background-color: #f6f6f6;
+	}
+	.team_name:nth-child(odd){
+		background-color: #fff;
+	}
 }
 #teamData{
 	text-align: center;
