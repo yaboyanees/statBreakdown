@@ -1,4 +1,4 @@
-<% if params[:firstTeam] %>	
+<% if params[:firstTeam].present? && params[:secondTeam].present? %>	
 	<%= render partial: 'chartScript' %>
 	<%= render partial: 'columnScript' %>
 	<%= render partial: 'scatterScript' %>
@@ -54,7 +54,7 @@
 						<tr>
 							<td><i>Wk <%= t2[1] %></i>:</td>
 							<td><b><%= t2[2] %></b> <%= t2[4] %>-<%= t2[5] %> vs <%= t2[3] %></td>
-							<td><%= link_to 'Game Map', edit_home_path(:id => t2[6]) %></td>
+							<td><%= link_to 'Game Map', home_path(:id => t2[6]) %></td>
 						</tr>					
 						<% end %>
 					<% end %>
@@ -69,7 +69,7 @@
 <% else %>
 	<div id="teamMatchup">
 		<h2>Select Matchup</h2>
-		<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+		<%= form_tag(root_path, :method => "get", id: "search-form", :validate=>true) do %>
 			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team' %>
 			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team' %><br /><br />
 			<%= submit_tag "View Matchup", :name => nil %>

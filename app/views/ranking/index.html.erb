@@ -1,16 +1,6 @@
-<%= @teamOrder.to_a %>
-<%= @currentData.to_a %>
-<%= @teamValues.to_a %>
-
 <div id="ranking">
-	<h2>League Q5 Rankings</h2>
-	
+	<h2>Current Q5 Rankings</h2>
+	<%= render partial: 'leagueScript' %>
 	<div id="leagueScatter"></div>
-	<div id="rankSelect">
-		<input class="rank" name="newSeries" type="radio" value="a"> 2014</input>
-		<input class="rank" name="newSeries" type="radio" value="b"> 2013</input>
-		<input class="rank" name="newSeries" type="radio" value="c"> 2012</input>
-		<input class="rank" name="newSeries" type="radio" value="d"> 2011</input>
-	</div>
 </div>
 

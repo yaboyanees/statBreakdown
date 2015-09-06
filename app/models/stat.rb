@@ -1,6 +1,7 @@
 class Stat < ActiveRecord::Base
 
-#	validates_presence_of :firstTeam, :secondTeam
+	validates_presence_of :firstTeam
+	validates_presence_of :team1
 
 	def self.import(file)
 	  CSV.foreach(file.path, headers: true) do |row|

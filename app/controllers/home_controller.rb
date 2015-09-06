@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 	def index
- 		if params[:firstTeam]
+ 		if params[:firstTeam].present? && params[:secondTeam].present?
  			#return team1 + team2 search + names
  			@team1 = Stat.search(params[:firstTeam]) 	
  			@team2 = Stat.search(params[:secondTeam])
@@ -43,10 +43,10 @@ class HomeController < ApplicationController
  				@teamOrder = @all.group("id", "team1").order("team1")
  				@currentData = @teamOrder.where("week = ?", @week).where("year = ?", @year)
  			@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
-
  		end
  		@teamNames = Stat.order(:team1).uniq.pluck(:team1)
  		@stats = Stat.all
+	else
 	end
 	
 	def show
