@@ -1,0 +1,525 @@
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup {
+  color: #333333;
+  padding: 5% 0 0 0;
+  height: 38%;
+}
+/* line 8, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+}
+/* line 16, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #firstTeam, #teamMatchup #secondTeam {
+  font-size: 21px;
+}
+/* line 19, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form {
+  width: 100%;
+  height: 100%;
+  padding: 17px 0 40px 0;
+  text-align: center;
+}
+/* line 24, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form select {
+  background-color: white;
+  border: 1px solid #e7e7e7;
+  border-radius: 0;
+  height: 45px;
+}
+/* line 30, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form input#search {
+  width: 210px;
+  height: 30px;
+  font-size: 16px;
+}
+/* line 35, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form input[type="submit"] {
+  background-color: #e7e7e7;
+  border: 1px solid #cccccc;
+  color: #4b4b4b;
+  width: 170px;
+  height: 45px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* line 47, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#transform {
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+
+/* line 51, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+.newMatch {
+  width: 150px;
+  padding: 15px 10px 15px 10px;
+  text-align: center;
+  background-color: #e7e7e7;
+  border: 1px solid #cccccc;
+  color: #4b4b4b;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 60, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+.newMatch a {
+  text-decoration: none;
+}
+/* line 63, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+.newMatch a:hover {
+  background-color: inherit;
+  color: #4b4b4b;
+}
+
+/*Table CSS*/
+/* line 70, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable {
+  margin: 0 auto;
+  max-width: 95%;
+}
+/* line 73, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table {
+  float: left;
+}
+/* line 75, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table th {
+  color: #006E29;
+}
+/* line 79, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team2Table {
+  float: left;
+}
+/* line 81, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team2Table table th {
+  color: #333333;
+}
+/* line 85, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table, #teamTable #team2Table {
+  padding-bottom: 40px;
+}
+/* line 87, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table a:link, #teamTable #team2Table table a:link {
+  color: #333333;
+  text-decoration: underline;
+}
+/* line 91, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table a:visited, #teamTable #team2Table table a:visited {
+  color: #333333;
+}
+/* line 94, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table a:hover, #teamTable #team2Table table a:hover {
+  color: #333333;
+}
+/* line 97, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table, #teamTable #team2Table table {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  text-shadow: 1px 1px 0px #fff;
+  background: #eaebec;
+  border: #ccc 1px solid;
+}
+/* line 104, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table th, #teamTable #team2Table table th {
+  padding: 15px;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  background: #ededed;
+  font-size: 25px;
+}
+/* line 111, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table tr, #teamTable #team2Table table tr {
+  text-align: center;
+}
+/* line 114, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table td:first, #teamTable #team2Table table td:first {
+  text-align: center;
+  border-left: 0;
+}
+/* line 118, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table td, #teamTable #team2Table table td {
+  text-align: left;
+  padding: 5px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 20px;
+}
+/* line 126, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table tr:nth-child(even) td, #teamTable #team2Table table tr:nth-child(even) td {
+  background: #f6f6f6;
+}
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio {
+  float: left;
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+}
+/* line 9, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 3% 2% 3% 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+  color: #333333;
+}
+/* line 18, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team {
+  float: left;
+  margin: 0;
+  margin-left: 3px;
+  padding: 5px 0;
+}
+/* line 23, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name {
+  font-size: 22px;
+  color: black;
+  margin: 0;
+  float: left;
+  padding: 25px 5px 20px 20px;
+  width: 25%;
+}
+/* line 30, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name a {
+  text-decoration: none;
+}
+/* line 33, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name a:visited {
+  color: black;
+}
+/* line 36, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: black;
+}
+/* line 43, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio .team_name:nth-child(even) {
+  background-color: #f6f6f6;
+}
+/* line 46, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio .team_name:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* line 50, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+.team {
+  text-align: center;
+  font-weight: bold;
+  padding: 3% 2% 3% 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+  color: #333333;
+}
+
+/* line 59, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamData {
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+
+/* line 63, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#diffDiv {
+  padding: 130px 0 0 0;
+}
+
+/* line 67, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+/* line 71, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14, #schedule #teamTable13, #schedule #teamTable12, #schedule #teamTable11 {
+  padding-bottom: 20px;
+}
+/* line 73, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table a:link, #schedule #teamTable14 table a:visited, #schedule #teamTable14 table a:hover, #schedule #teamTable13 table a:link, #schedule #teamTable13 table a:visited, #schedule #teamTable13 table a:hover, #schedule #teamTable12 table a:link, #schedule #teamTable12 table a:visited, #schedule #teamTable12 table a:hover, #schedule #teamTable11 table a:link, #schedule #teamTable11 table a:visited, #schedule #teamTable11 table a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+/* line 77, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table, #schedule #teamTable13 table, #schedule #teamTable12 table, #schedule #teamTable11 table {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  text-shadow: 1px 1px 0px #fff;
+  background: #eaebec;
+  border: #ccc 1px solid;
+  text-align: center;
+}
+/* line 85, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table th, #schedule #teamTable13 table th, #schedule #teamTable12 table th, #schedule #teamTable11 table th {
+  padding: 10px 15px;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  background: #ededed;
+  font-size: 30px;
+  line-height: 30px;
+  color: #333333;
+}
+/* line 94, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table td, #schedule #teamTable13 table td, #schedule #teamTable12 table td, #schedule #teamTable11 table td {
+  padding: 5px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 20px;
+}
+/* line 101, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table tr:nth-child(even) td, #schedule #teamTable13 table tr:nth-child(even) td, #schedule #teamTable12 table tr:nth-child(even) td, #schedule #teamTable11 table tr:nth-child(even) td {
+  background-color: #f6f6f6;
+}
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/ranking.scss */
+#ranking {
+  height: 100%;
+  width: 100%;
+}
+/* line 7, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/ranking.scss */
+#ranking h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 3% 2% 3% 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+  color: #333333;
+}
+/* line 16, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/ranking.scss */
+#ranking #rankSelect {
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+/* line 1, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* line 10, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+
+/* line 32, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 37, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 41, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 47, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 66, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/stats.scss */
+table {
+  width: 100%;
+  text-align: center;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+html, body{
+	overflow-x:hidden;
+	height: 100%;
+	width: 100%;
+}
+table{
+    text-align: center;
+}
+@media screen and ( max-width: 782px ) {
+	html { 
+		margin-top: 46px !important; 
+	}
+	* html body { 
+		margin-top: 46px !important; 
+	}
+}
+a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,.x-comment-time:hover,#reply-title small a,.comment-reply-link:hover,.x-comment-author a:hover,.x-recent-posts a:hover .h-recent-posts{
+	color:#006e29;
+}
+a:hover,#reply-title small a:hover{
+	color:#006e29;
+}
+.entry-title:before{
+	color:#006e29;
+}
+a.x-img-thumbnail:hover,li.bypostauthor > article.comment{border-color:#006e29;}.flex-direction-nav a,.flex-control-nav a:hover,.flex-control-nav a.flex-active,.x-dropcap,.x-skill-bar .bar,.x-pricing-column.featured h2,.h-comments-title small,.pagination a:hover,.x-entry-share .x-share:hover,.entry-thumb,.widget_tag_cloud .tagcloud a:hover,.widget_product_tag_cloud .tagcloud a:hover,.x-highlight,.x-recent-posts .x-recent-posts-img:after,.x-portfolio-filters{
+	background-color:#006e29;
+}
+.x-portfolio-filters:hover{
+	background-color:#006e29;
+}
+.x-main{
+	width:68.79803%;
+}
+.x-sidebar{
+	width:24.79803%;
+}
+.x-topbar .p-info,.x-topbar .p-info a,.x-topbar .x-social-global a{
+	color:#ffffff;
+}
+.x-topbar .p-info a:hover{
+	color:#006e29;
+}
+.x-topbar{
+	background-color:#f9f9f9;
+}
+.x-navbar .desktop .x-nav > li:before{
+	padding-top:60px;
+}
+.x-brand,.x-brand:hover,.x-navbar .desktop .x-nav > li > a,.x-navbar .desktop .sub-menu li > a,.x-navbar .mobile .x-nav li a{
+	color:#006e29;
+}
+.x-navbar .desktop .x-nav > li > a:hover,.x-navbar .desktop .x-nav > .x-active > a,.x-navbar .desktop .x-nav > .current-menu-item > a,.x-navbar .desktop .sub-menu li > a:hover,.x-navbar .desktop .sub-menu li.x-active > a,.x-navbar .desktop .sub-menu li.current-menu-item > a,.x-navbar .desktop .x-nav .x-megamenu > .sub-menu > li > a,.x-navbar .mobile .x-nav li > a:hover,.x-navbar .mobile .x-nav li.x-active > a,.x-navbar .mobile .x-nav li.current-menu-item > a{color:#5c5c5c;}.x-btn-navbar,.x-btn-navbar:hover{color:inherit;}.x-navbar .desktop .sub-menu li:before,.x-navbar .desktop .sub-menu li:after{background-color:#006e29;}.x-navbar,.x-navbar .sub-menu{background-color:#f9f9f9 !important;}.x-btn-navbar,.x-btn-navbar.collapsed:hover{background-color:#006e29;}.x-btn-navbar.collapsed{background-color:#006e29;}.x-navbar .desktop .x-nav > li > a:hover > span,.x-navbar .desktop .x-nav > li.x-active > a > span,.x-navbar .desktop .x-nav > li.current-menu-item > a > span{box-shadow:0 2px 0 0 #5c5c5c;}.x-navbar .desktop .x-nav > li > a{height:120px;padding-top:60px;}.x-navbar .desktop .x-nav > li ul{top:20px;}.x-colophon.bottom{background-color:#333333;}.x-colophon.bottom,.x-colophon.bottom a,.x-colophon.bottom .x-social-global a{color:#ffffff;}.h-landmark{font-weight:300;}@media (max-width:979px){.x-widgetbar{left:0;right:0;}}html body #wpadminbar{z-index:99999 !important;}.admin-bar .x-navbar-fixed-top,.admin-bar .x-navbar-fixed-left,.admin-bar .x-navbar-fixed-right{top:32px;}@media (max-width:979px){.admin-bar .x-navbar-fixed-top,.admin-bar .x-navbar-fixed-left,.admin-bar .x-navbar-fixed-right{top:0;}}.admin-bar .x-widgetbar,.admin-bar .x-btn-widgetbar{top:32px;}@media screen and (max-width:782px){.admin-bar .x-widgetbar,.admin-bar .x-btn-widgetbar{top:46px;}}body{font-size:14px;font-style:normal;font-weight:300;background-color:#f3f3f3;}a:focus,select:focus,input[type="file"]:focus,input[type="radio"]:focus,input[type="submit"]:focus,input[type="checkbox"]:focus{outline:thin dotted #333;outline:5px auto #006e29;outline-offset:-1px;}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-style:normal;font-weight:400;letter-spacing:-1px;}.w-h{font-weight:400 !important;}.x-container.width{width:88%;}.x-container.max{max-width:1900px;}.x-main.full{float:none;display:block;width:auto;}@media (max-width:979px){.x-main.full,.x-main.left,.x-main.right,.x-sidebar.left,.x-sidebar.right{float:none;display:block;width:auto !important;}}.entry-header,.entry-content{font-size:14px;}.x-brand{font-style:normal;font-weight:400;letter-spacing:-3px;}.x-brand img{width:95px;}body,input,button,select,textarea{font-family:"Helvetica Neue",Helvetica,sans-serif;}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:"Exo 2","Helvetica Neue",Helvetica,sans-serif;}.x-brand{font-family:"Exo 2","Helvetica Neue",Helvetica,sans-serif;}.x-navbar .x-nav > li > a{font-family:"Exo 2","Helvetica Neue",Helvetica,sans-serif;}.x-btn-widgetbar{border-top-color:#006e29;border-right-color:#006e29;}.x-btn-widgetbar:hover{border-top-color:#5c5c5c;border-right-color:#5c5c5c;}.x-navbar{font-size:16px;}body.x-navbar-fixed-top-active .x-navbar-wrap{height:120px;}.x-navbar-inner{min-height:120px;}.x-brand{font-size:54px;font-size:5.4rem;}.x-navbar .x-brand{margin-top:15px;}.x-navbar .x-nav-wrap .x-nav > li > a{font-style:normal;font-weight:400;letter-spacing:1px;text-transform:uppercase;}.x-navbar .desktop .x-nav > li > a:not(.x-btn-navbar-woocommerce){padding-left:20px;padding-right:20px;}.x-navbar .desktop .x-nav > li > a > span{margin-right:-1px;}.x-btn-navbar{margin-top:20px;;}.x-btn-navbar,.x-btn-navbar.collapsed{font-size:24px;}@media (max-width:979px){body.x-navbar-fixed-top-active .x-navbar-wrap{height:auto;}}.x-btn,.button,[type="submit"]{color:#ffffff;border-color:#006e29;background-color:#006e29;margin-bottom:0.25em;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.5);box-shadow:0 0.25em 0 0 #5c5c5c,0 4px 9px rgba(0,0,0,0.75);border-radius:0.25em;}.x-btn:hover,.button:hover,[type="submit"]:hover{color:#ffffff;border-color:#5c5c5c;background-color:#5c5c5c;margin-bottom:0.25em;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.5);box-shadow:0 0.25em 0 0 #006e29,0 4px 9px rgba(0,0,0,0.75);}.x-btn.x-btn-real,.x-btn.x-btn-real:hover{margin-bottom:0.25em;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.65);}.x-btn.x-btn-real{box-shadow:0 0.25em 0 0 #5c5c5c,0 4px 9px rgba(0,0,0,0.75);}.x-btn.x-btn-real:hover{box-shadow:0 0.25em 0 0 #006e29,0 4px 9px rgba(0,0,0,0.75);}.x-btn.x-btn-flat,.x-btn.x-btn-flat:hover{margin-bottom:0;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.65);box-shadow:none;}.x-btn.x-btn-transparent,.x-btn.x-btn-transparent:hover{margin-bottom:0;border-width:3px;text-shadow:none;text-transform:uppercase;background-color:transparent;box-shadow:none;}.x-subscribe-form{position:relative;}.x-subscribe-form h1{font-size:1.75em;margin:0 0 0.5em;}.x-subscribe-form label{margin:0 0 0.375em;font-size:0.85em;line-height:1;}.x-subscribe-form label > span{position:relative;}.x-subscribe-form label .required{position:absolute;top:-0.1em;font-size:1.5em;}.x-subscribe-form input[type="text"],.x-subscribe-form input[type="email"]{width:100%;margin-bottom:1.25em;font-size:inherit;}.x-subscribe-form input[type="submit"]{display:inline-block;width:100%;margin-top:0.25em;font-size:inherit;}.x-subscribe-form input[type="submit"]:focus{outline:0;}.x-subscribe-form .x-subscribe-form-alert-wrap{
+	margin-top:1.25em;
+	font-family: "Exo 2","Helvetica Neue",Helvetica,sans-serif;
+}
+.x-social-global a {
+	background-color: #77777;
+}
+.x-social-global a.facebook:hover {
+	background-color:#006E29;
+}
+.x-social-global a.twitter:hover {
+	background-color:#006E29;
+}
+.x-social-global a.instagram:hover {
+	background-color:#006E29;
+}
+.x-colophon  a:hover {
+	color:#006E29;
+}
+.x-navbar .sub-menu a{
+	font-size:13px;
+}
+#mc_embed_signup {
+	display: inline-block; 
+	background:none; 
+	clear:both; 
+	font:14px Helvetica,Arial,sans-serif;  
+	width: 400px;  
+	float: left; 
+	margin-right: 9px; 
+	margin-bottom: -20px;
+	margin-left: -20px;
+}
+#mc_embed_signup form {
+	display: inline-block; 
+	position:relative; 
+	width: 100%; 
+	max-width: 1000px; 
+	padding:15px 0 0 3%
+}
+#mc_embed_signup input.email {
+	display:inline-block; 
+	padding:8px 0; 
+	margin:0 4% 10px 0; 
+	text-indent:10px; 
+	width:50%; 
+	min-width:130px;
+}
+#mc_embed_signup input {
+	border:1px solid #5c5c5c; 
+	border-radius:3px; 
+	-webkit-appearance:none;
+}
+#mc_embed_signup .button {
+	clear:both; 
+	background-color: #006E29; 
+	border: 0 none; 
+	border-radius:3px; 
+	color: #FFFFFF; 
+	cursor: pointer; 
+	display: inline-block; 
+	font-size:15px; 
+	font-weight: bold; 
+	height: 32px; 
+	line-height: 32px; 
+	margin: 0 5px 0px 0; 
+	padding:0; 
+	text-align: center; 
+	text-decoration: none; 
+	vertical-align: top; 
+	white-space: nowrap; 
+	width: auto;
+}
+#mc_embed_signup input.button {
+	display: inline-block; 
+	width:40%; 
+	margin:0 0 0px 0; 
+	min-width:90px;
+}
