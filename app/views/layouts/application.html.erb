@@ -1,17 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Team Matchup Tool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'highcharts' %>
   <%= javascript_include_tag 'highcharts-3d' %>
   <%= csrf_meta_tags %>
+  <link rel="pingback" href="http://theqfive.com/xmlrpc.php"><link rel="alternate" type="application/rss+xml" title="The Q5 &raquo; Feed" href="http://theqfive.com/feed/" />
+  <link rel="alternate" type="application/rss+xml" title="The Q5 &raquo; Comments Feed" href="http://theqfive.com/comments/feed/" />		
+  <link rel='stylesheet' id='open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3' type='text/css' media='all' />
+  <link rel='stylesheet' id='dashicons-css'  href='http://theqfive.com/wp-includes/css/dashicons.min.css?ver=4.3' type='text/css' media='all' />
+  <link rel='stylesheet' id='mstw_ss_style-css'  href='http://theqfive.com/wp-content/plugins/mstw-schedules-scoreboards/css/mstw-ss-styles.css?ver=4.3' type='text/css' media='all' />
+  <link rel='stylesheet' id='x-child-css'  href='http://theqfive.com/wp-content/themes/x-child-renew/style.css?ver=4.0.6' type='text/css' media='all' />
+  <link rel="stylesheet" type="text/css" href="q5Styles.css">
+  <script type='text/javascript' src='http://theqfive.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+  <script type='text/javascript' src='http://theqfive.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+  <script type='text/javascript' src='http://theqfive.com/wp-content/themes/x/framework/js/dist/site/x-head.min.js?ver=4.0.6'></script>
+  <script type='text/javascript' src='http://theqfive.com/wp-content/plugins/cornerstone/assets/js/dist/site/cs-head.min.js?ver=1.0.5'></script>
+  <link rel='canonical' href='http://theqfive.com/match-ups/' />
+  <link rel='shortlink' href='http://theqfive.com/?p=68' />
+<meta property="og:site_name" content="The Q5"><meta property="og:title" content="Match-Ups"><meta property="og:description" content="Game Day Preparation – How Do Teams Match Up? Ready to see how your team matches up? Using team, offense and defense performance from the entire season-to-date, any two teams can be compared side-by-side. Unlock&hellip;"><meta property="og:image" content=""><meta property="og:url" content="http://theqfive.com/match-ups/"><meta property="og:type" content="article">
 </head>
 <body>
+<header class="masthead masthead-inline" role="banner">
+    
+<div class="x-navbar-wrap">
+	<div class="x-navbar">
+  		<div class="x-navbar-inner">
+			<div class="x-container max width">
+          		<a href="http://theqfive.com/" class="x-brand img" title="Graphical Football Analytics">
+  					<%= image_tag("TheQ5-logo_Primary-RGB-Color-crop-263x241.png", alt: "Graphical Football Analytics") %>
+  				</a>          
+			<nav class="x-nav-wrap desktop" role="navigation">
+  				<ul id="menu-main-navigation" class="x-nav" style="margin: 55px 0 -55px 0; font-size: 16px;">
+  					<li id="menu-item-91" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-91">
+						<a><span>Football</span></a>
+						<ul class="sub-menu">
+							<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://theqfive.com/two-minute-drill/"><span>Two-Minute Drill</span></a></li>
+							<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://theqfive.com/game-lines/"><span>Game Lines</span></a></li>
+							<li id="menu-item-1764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1764"><a href="http://theqfive.com/my-team/"><%= link_to 'My Teams', portfolio_index_path %></li>
+							<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-68 current_page_item menu-item-83"><%= link_to 'Match-Ups', root_path %></li>
+							<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://theqfive.com/rankings/"><%= link_to 'Rankings', ranking_index_path, 'data-no-turbolink' => true %></li>
+							<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="http://theqfive.com/memorable-performances/"><span>Memorable Performances</span></a></li>
+							<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://theqfive.com/tutorial/"><span>Tutorial</span></a></li>
+						</ul>
+					</li>
+						<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="http://theqfive.com/blog/"><span>Blog</span></a></li>
+						<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://theqfive.com/press/"><span>Press</span></a></li>
+						<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="http://theqfive.com/about/"><span>About</span></a></li>
+						<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="http://theqfive.com/contact/"><span>Contact</span></a></li>
+						<li class="menu-item x-menu-item x-menu-item-search"><a href="#" class="x-btn-navbar-search"><span><i class="x-icon-search" data-x-icon="&#xf002;"></i><span class="x-hidden-desktop"> Search</span></span></a>
+					</li>
+				</ul>
+			</nav>
+			<div class="x-nav-wrap mobile collapse">
+  				<ul id="menu-main-navigation-1" class="x-nav">
+  					<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-91"><a><span>Football</span></a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://theqfive.com/two-minute-drill/"><span>Two-Minute Drill</span></a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://theqfive.com/game-lines/"><span>Game Lines</span></a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1764"><a href="http://theqfive.com/my-team/"><%= link_to 'My Teams', portfolio_index_path %></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-68 current_page_item menu-item-83"><%= link_to 'Match-Ups', root_path %></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://theqfive.com/rankings/"><%= link_to 'Rankings', ranking_index_path, 'data-no-turbolink' => true %></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="http://theqfive.com/memorable-performances/"><span>Memorable Performances</span></a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://theqfive.com/tutorial/"><span>Tutorial</span></a></li>
+						</ul>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="http://theqfive.com/blog/"><span>Blog</span></a></li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://theqfive.com/press/"><span>Press</span></a></li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="http://theqfive.com/about/"><span>About</span></a></li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="http://theqfive.com/contact/"><span>Contact</span></a></li>
+					<li class="menu-item x-menu-item x-menu-item-search"><a href="#" class="x-btn-navbar-search"><span><i class="x-icon-search" data-x-icon="&#xf002;"></i><span class="x-hidden-desktop"> Search</span></span></a></li>
+				</ul>
+			</div>        
+		</div>
+	</div>
+</div>
+</header>
 
-<%= link_to 'Matchup', root_path %> | <%= link_to 'Portfolio', portfolio_index_path %> | <%= link_to 'Rankings', ranking_index_path, 'data-no-turbolink' => true %>
-<%= yield %>
+<header class="x-header-landmark">
+	<%= yield %>
+</header>
+<div class="x-container max width offset"></div>
+<div class="x-widgetbar collapse">
+	<div class="x-widgetbar-inner">
+		<div class="x-container max width">
+			<div class="x-column x-md x-1-1 last"><div id="text-5" class="widget widget_text">			
+				<div class="textwidget">[livescores-americanfootball] </div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<a class="x-scroll-top  fade" href="#top" title="Back to Top">
+	<i class="x-icon-angle-up" data-x-icon="&#xf106;"></i>
+</a>
+
+<script>
+  jQuery(document).ready(function($) {
+    var windowObj            = $(window);
+    var body                 = $('body');
+    var bodyOffsetBottom     = windowObj.scrollBottom();             // 1
+    var bodyHeightAdjustment = body.height() - bodyOffsetBottom;     // 2
+    var bodyHeightAdjusted   = body.height() - bodyHeightAdjustment; // 3
+    var scrollTopAnchor      = $('.x-scroll-top');
+    function sizingUpdate(){
+      var bodyOffsetTop = windowObj.scrollTop();
+      if ( bodyOffsetTop > ( bodyHeightAdjusted * 0 ) ) {
+        scrollTopAnchor.addClass('in');
+      } else {
+        scrollTopAnchor.removeClass('in');
+      }
+    }
+    windowObj.bind('scroll', sizingUpdate).resize(sizingUpdate);
+    sizingUpdate();
+    scrollTopAnchor.click(function(){
+      $('html,body').animate({ scrollTop: 0 }, 850, 'easeInOutExpo');
+      return false;
+    });
+
+  });
+</script>
+
+<footer class="x-colophon bottom" role="contentinfo" style="background-color: #333;">
+	<div class="x-container max width">
+		<div class="x-social-global"><a href="https://www.facebook.com/theQ5" class="facebook" title="Facebook" target="_blank"><i class="x-icon-facebook-square" data-x-icon="&#xf082;"></i></a><a href="https://www.twitter.com/aguyader17" class="twitter" title="Twitter" target="_blank"><i class="x-icon-twitter-square" data-x-icon="&#xf081;"></i></a><a href="https://www.instagram.com/aguyader17" class="instagram" title="Instagram" target="_blank"><i class="x-icon-instagram" data-x-icon="&#xf16d;"></i></a></div>        
+        <ul id="menu-footer-navigation" class="x-nav"><li id="menu-item-99" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99"><a href="http://theqfive.com/faq/">FAQ</a></li>
+			<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="http://theqfive.com/giving-back-2/">Giving Back</a></li>
+			<li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="http://theqfive.com/events/">Events</a></li>
+			<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="http://theqfive.com/privacy-policy/">Privacy Policy</a></li>
+			<li id="menu-item-100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100"><a href="http://theqfive.com/giving-back/">Terms of Use</a></li>
+			<li id="menu-item-1467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1467"><a href="http://theqfive.com/contact/">Contact</a></li>
+		</ul>        
+        <div class="x-colophon-content">
+        	<p>The Q5 &copy 2015 | 619.719.1201 | <a href="mailto:contact@theq5.com">contact@theq5.com</a> | San Luis Obispo, CA</p>          </div>
+        </div>
+</footer>
+
+  
+
+  
+      <div class="x-searchform-overlay">
+        <div class="x-searchform-overlay-inner">
+          <div class="x-container max width">
+            <form method="get" id="searchform" class="form-search center-text" action="http://theqfive.com/">
+              <label for="s" class="cfc-h-tx tt-upper">Type and Press &ldquo;enter&rdquo; to Search</label>
+              <input type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      
+  </div> <!-- END #top.site -->
+
+  
+<script type='text/javascript' src='http://theqfive.com/wp-includes/js/admin-bar.min.js?ver=4.3'></script>
+<script type='text/javascript' src='http://theqfive.com/wp-content/plugins/mstw-schedules-scoreboards/js/ss-slider.js?ver=4.3'></script>
+<script type='text/javascript' src='http://theqfive.com/wp-content/plugins/mstw-schedules-scoreboards/js/ss-ticker.js?ver=4.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var x_email_forms = {"ajaxurl":"http:\/\/theqfive.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://theqfive.com/wp-content/plugins/x-email-mailchimp/email-integration/js/site/main.js'></script>
+<script type='text/javascript' src='http://theqfive.com/wp-content/themes/x/framework/js/dist/site/x-body.min.js?ver=4.0.6'></script>
+<script type='text/javascript' src='http://theqfive.com/wp-includes/js/comment-reply.min.js?ver=4.3'></script>
+<script type='text/javascript' src='http://theqfive.com/wp-content/plugins/cornerstone/assets/js/dist/site/cs-body.min.js?ver=1.0.5'></script>
+<script type='text/javascript' src='http://theqfive.com/wp-content/plugins/x-under-construction/js/site/countdown.js'></script>
+	<script type="text/javascript">
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+			request = true;
+
+			b[c] = b[c].replace( rcs, ' ' );
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	</script>
 
 </body>
 </html>

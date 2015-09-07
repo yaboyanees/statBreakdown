@@ -4,6 +4,9 @@ $(function () {
 	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>]
     var leagueArray = [<%= raw @leagueOPts2011 %>, <%= raw @leagueOPts2012 %>, <%= raw @leagueOPts2013 %>, <%= raw @leagueOPts2014 %>]
     $('#points').highcharts({  
+		chart: {
+			backgroundColor:'rgba(255, 255, 255, 0.1)'
+		},
 		title: {
 			text: '',
 		},

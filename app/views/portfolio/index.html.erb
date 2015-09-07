@@ -1,5 +1,16 @@
+<title>Portfolio | The Q5</title>
+<div class="x-container max width">
+	<div class="x-landmark-breadcrumbs-wrap">
+		<div class="x-landmark">
+			<h1 class="h-landmark entry-title"><span>My Teams</span></h1>
+		</div>
+		<div class="x-breadcrumbs-wrap">
+			<div class="x-breadcrumbs"><a href="http://theqfive.com"><span class="home"><i class="x-icon-home" data-x-icon="&#xf015;"></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon="&#xf105;"></i></span> <span class="current" style="color: #28323F;">MY TEAMS</span>
+			</div>              
+		</div>
+	</div>
+</div>
 <div id="teamPortfolio">
-	<h2>View Portfolio</h2>
 	<div id="indy_team">
 	<% @teamNames.each do |tn| %>
 		<p class="team_name"><%= link_to tn, portfolio_path(:id => tn) %></p>
