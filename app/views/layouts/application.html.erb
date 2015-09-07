@@ -23,28 +23,19 @@
 			<nav class="x-nav-wrap desktop" role="navigation">
   				<ul id="menu-main-navigation" class="x-nav" style="margin: 55px 0 -55px 0; font-size: 16px;">
   					<li id="menu-item-91" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-91">
-						<a><span>Football</span></a>
-						<ul class="sub-menu">
-							<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://theqfive.com/two-minute-drill/"><span>Two-Minute Drill</span></a></li>
-							<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://theqfive.com/game-lines/"><span>Game Lines</span></a></li>
-							<li id="menu-item-1764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1764"><a href="http://theqfive.com/my-team/"><%= link_to 'My Teams', portfolio_index_path, 'data-no-turbolink' => true %></li>
-							<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-68 current_page_item menu-item-83"><%= link_to 'Match-Ups', root_path, 'data-no-turbolink' => true %></li>
-							<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://theqfive.com/rankings/"><%= link_to 'Rankings', ranking_index_path, 'data-no-turbolink' => true %></li>
-							<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="http://theqfive.com/memorable-performances/"><span>Memorable Performances</span></a></li>
-							<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://theqfive.com/tutorial/"><span>Tutorial</span></a></li>
-						</ul>
+						<a href="http://theqfive.com/"><span>Football</span></a>
 					</li>
-						<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="http://theqfive.com/blog/"><span>Blog</span></a></li>
-						<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://theqfive.com/press/"><span>Press</span></a></li>
-						<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="http://theqfive.com/about/"><span>About</span></a></li>
+						<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><%= link_to 'Match-Ups', root_path %></li>
+						<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><%= link_to 'My Teams', portfolio_index_path %></li>
+						<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><%= link_to 'Rankings', ranking_index_path, 'data-no-turbolink' => true %></li>
 						<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="http://theqfive.com/contact/"><span>Contact</span></a></li>
-						<li class="menu-item x-menu-item x-menu-item-search"><a href="#" class="x-btn-navbar-search"><span><i class="x-icon-search" data-x-icon="&#xf002;"></i><span class="x-hidden-desktop"> Search</span></span></a>
+						<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="http://theqfive.com/tutorial/"><span>Tutorial</span></a></li>
 					</li>
 				</ul>
 			</nav>
 			<div class="x-nav-wrap mobile collapse">
   				<ul id="menu-main-navigation-1" class="x-nav">
-  					<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-91"><a><span>Football</span></a>
+  					<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-91"><%= link_to 'Match-Ups', root_path %>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://theqfive.com/two-minute-drill/"><span>Two-Minute Drill</span></a></li>
 							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://theqfive.com/game-lines/"><span>Game Lines</span></a></li>
@@ -74,9 +65,6 @@
 <div class="x-widgetbar collapse">
 	<div class="x-widgetbar-inner">
 		<div class="x-container max width">
-			<div class="x-column x-md x-1-1 last"><div id="text-5" class="widget widget_text">			
-				<div class="textwidget">[livescores-americanfootball] </div>
-			</div>
 		</div>
 	</div>
   </div>
@@ -86,31 +74,6 @@
 	<i class="x-icon-angle-up" data-x-icon="&#xf106;"></i>
 </a>
 
-<script>
-  jQuery(document).ready(function($) {
-    var windowObj            = $(window);
-    var body                 = $('body');
-    var bodyOffsetBottom     = windowObj.scrollBottom();             // 1
-    var bodyHeightAdjustment = body.height() - bodyOffsetBottom;     // 2
-    var bodyHeightAdjusted   = body.height() - bodyHeightAdjustment; // 3
-    var scrollTopAnchor      = $('.x-scroll-top');
-    function sizingUpdate(){
-      var bodyOffsetTop = windowObj.scrollTop();
-      if ( bodyOffsetTop > ( bodyHeightAdjusted * 0 ) ) {
-        scrollTopAnchor.addClass('in');
-      } else {
-        scrollTopAnchor.removeClass('in');
-      }
-    }
-    windowObj.bind('scroll', sizingUpdate).resize(sizingUpdate);
-    sizingUpdate();
-    scrollTopAnchor.click(function(){
-      $('html,body').animate({ scrollTop: 0 }, 850, 'easeInOutExpo');
-      return false;
-    });
-
-  });
-</script>
 
 <footer class="x-colophon bottom" role="contentinfo" style="background-color: #333;">
 	<div class="x-container max width">
@@ -126,18 +89,6 @@
         	<p>The Q5 &copy 2015 | 619.719.1201 | <a href="mailto:contact@theq5.com">contact@theq5.com</a> | San Luis Obispo, CA</p>          </div>
         </div>
 </footer>
-
-      <div class="x-searchform-overlay">
-        <div class="x-searchform-overlay-inner">
-          <div class="x-container max width">
-            <form method="get" id="searchform" class="form-search center-text" action="http://theqfive.com/">
-              <label for="s" class="cfc-h-tx tt-upper">Type and Press &ldquo;enter&rdquo; to Search</label>
-              <input type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s">
-            </form>
-          </div>
-        </div>
-      </div>
-
       
   </div> 
 </body>
