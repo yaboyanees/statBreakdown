@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'application', 'http://theqfive.com/wp-content/themes/x-child-renew/style.css?ver=4.0.6' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'highcharts' %>
   <%= javascript_include_tag 'highcharts-3d' %>
@@ -30,8 +29,8 @@
 						<ul class="sub-menu">
 							<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://theqfive.com/two-minute-drill/"><span>Two-Minute Drill</span></a></li>
 							<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://theqfive.com/game-lines/"><span>Game Lines</span></a></li>
-							<li id="menu-item-1764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1764"><a href="http://theqfive.com/my-team/"><%= link_to 'My Teams', portfolio_index_path %></li>
-							<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-68 current_page_item menu-item-83"><%= link_to 'Match-Ups', root_path %></li>
+							<li id="menu-item-1764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1764"><a href="http://theqfive.com/my-team/"><%= link_to 'My Teams', portfolio_index_path, 'data-no-turbolink' => true %></li>
+							<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-68 current_page_item menu-item-83"><%= link_to 'Match-Ups', root_path, 'data-no-turbolink' => true %></li>
 							<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://theqfive.com/rankings/"><%= link_to 'Rankings', ranking_index_path, 'data-no-turbolink' => true %></li>
 							<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="http://theqfive.com/memorable-performances/"><span>Memorable Performances</span></a></li>
 							<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://theqfive.com/tutorial/"><span>Tutorial</span></a></li>
