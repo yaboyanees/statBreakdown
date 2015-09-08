@@ -1,3 +1,381 @@
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup {
+  color: #333333;
+  padding: 5% 0 0 0;
+  height: 38%;
+}
+/* line 8, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+}
+/* line 16, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #firstTeam, #teamMatchup #secondTeam {
+  font-size: 21px;
+}
+/* line 19, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form {
+  width: 100%;
+  height: 100%;
+  padding: 17px 0 40px 0;
+  text-align: center;
+}
+/* line 24, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form select {
+  background-color: white;
+  border: 1px solid #e7e7e7;
+  border-radius: 0;
+  height: 45px;
+}
+/* line 30, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form input#search {
+  width: 210px;
+  height: 30px;
+  font-size: 16px;
+}
+/* line 35, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamMatchup #search-form input[type="submit"] {
+  background-color: #e7e7e7;
+  border: 1px solid #cccccc;
+  color: #4b4b4b;
+  width: 170px;
+  height: 45px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* line 47, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#transform {
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+
+/* line 51, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+.newMatch {
+  width: 150px;
+  padding: 15px 10px 15px 10px;
+  text-align: center;
+  background-color: #e7e7e7;
+  border: 1px solid #cccccc;
+  color: #4b4b4b;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 60, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+.newMatch a {
+  text-decoration: none;
+}
+/* line 63, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+.newMatch a:hover {
+  background-color: inherit;
+  color: #4b4b4b;
+}
+
+/*Table CSS*/
+/* line 70, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable {
+  margin: 0 auto;
+  max-width: 95%;
+}
+/* line 73, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table {
+  float: left;
+}
+/* line 75, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table th {
+  color: #006E29;
+}
+/* line 79, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team2Table {
+  float: left;
+}
+/* line 81, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team2Table table th {
+  color: #333333;
+}
+/* line 85, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table, #teamTable #team2Table {
+  padding-bottom: 40px;
+}
+/* line 87, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table a:link, #teamTable #team2Table table a:link {
+  color: #333333;
+  text-decoration: underline;
+}
+/* line 91, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table a:visited, #teamTable #team2Table table a:visited {
+  color: #333333;
+}
+/* line 94, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table a:hover, #teamTable #team2Table table a:hover {
+  color: #333333;
+}
+/* line 97, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table, #teamTable #team2Table table {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  text-shadow: 1px 1px 0px #fff;
+  background: #eaebec;
+  border: #ccc 1px solid;
+}
+/* line 104, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table th, #teamTable #team2Table table th {
+  padding: 15px;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  background: #ededed;
+  font-size: 25px;
+}
+/* line 111, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table tr, #teamTable #team2Table table tr {
+  text-align: center;
+}
+/* line 114, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table td:first, #teamTable #team2Table table td:first {
+  text-align: center;
+  border-left: 0;
+}
+/* line 118, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table td, #teamTable #team2Table table td {
+  text-align: left;
+  padding: 5px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 20px;
+}
+/* line 126, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/home.scss */
+#teamTable #team1Table table tr:nth-child(even) td, #teamTable #team2Table table tr:nth-child(even) td {
+  background: #f6f6f6;
+}
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio {
+  float: left;
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+}
+/* line 9, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 3% 2% 3% 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+  color: #333333;
+}
+/* line 18, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team {
+  float: left;
+  margin: 0;
+  margin-left: 3px;
+  padding: 5px 0;
+}
+/* line 23, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name {
+  font-size: 22px;
+  color: black;
+  margin: 0;
+  float: left;
+  padding: 25px 5px 20px 20px;
+  width: 25%;
+}
+/* line 30, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name a {
+  text-decoration: none;
+}
+/* line 33, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name a:visited {
+  color: black;
+}
+/* line 36, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio #indy_team .team_name a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: black;
+}
+/* line 43, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio .team_name:nth-child(even) {
+  background-color: #f6f6f6;
+}
+/* line 46, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamPortfolio .team_name:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* line 50, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+.team {
+  text-align: center;
+  font-weight: bold;
+  padding: 3% 2% 3% 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+  color: #333333;
+}
+
+/* line 59, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#teamData {
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+
+/* line 63, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#diffDiv {
+  padding: 130px 0 0 0;
+}
+
+/* line 67, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+/* line 71, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14, #schedule #teamTable13, #schedule #teamTable12, #schedule #teamTable11 {
+  padding-bottom: 20px;
+}
+/* line 73, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table a:link, #schedule #teamTable14 table a:visited, #schedule #teamTable14 table a:hover, #schedule #teamTable13 table a:link, #schedule #teamTable13 table a:visited, #schedule #teamTable13 table a:hover, #schedule #teamTable12 table a:link, #schedule #teamTable12 table a:visited, #schedule #teamTable12 table a:hover, #schedule #teamTable11 table a:link, #schedule #teamTable11 table a:visited, #schedule #teamTable11 table a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+/* line 77, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table, #schedule #teamTable13 table, #schedule #teamTable12 table, #schedule #teamTable11 table {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  text-shadow: 1px 1px 0px #fff;
+  background: #eaebec;
+  border: #ccc 1px solid;
+  text-align: center;
+}
+/* line 85, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table th, #schedule #teamTable13 table th, #schedule #teamTable12 table th, #schedule #teamTable11 table th {
+  padding: 10px 15px;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  background: #ededed;
+  font-size: 30px;
+  line-height: 30px;
+  color: #333333;
+}
+/* line 94, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table td, #schedule #teamTable13 table td, #schedule #teamTable12 table td, #schedule #teamTable11 table td {
+  padding: 5px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 20px;
+}
+/* line 101, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/portfolio.scss */
+#schedule #teamTable14 table tr:nth-child(even) td, #schedule #teamTable13 table tr:nth-child(even) td, #schedule #teamTable12 table tr:nth-child(even) td, #schedule #teamTable11 table tr:nth-child(even) td {
+  background-color: #f6f6f6;
+}
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/ranking.scss */
+#ranking {
+  height: 100%;
+  width: 100%;
+}
+/* line 7, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/ranking.scss */
+#ranking h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 3% 2% 3% 2%;
+  font-size: 6.5vmax;
+  margin: 0;
+  line-height: 38px;
+  color: #333333;
+}
+/* line 16, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/ranking.scss */
+#ranking #rankSelect {
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+/* line 1, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* line 10, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+
+/* line 32, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 37, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 41, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 47, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 66, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 4, /Users/aneesmerzi/projects/team_match/app/assets/stylesheets/stats.scss */
+table {
+  width: 100%;
+  text-align: center;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +388,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 html, body{
 	overflow-x:hidden;
 	height: 100%;
