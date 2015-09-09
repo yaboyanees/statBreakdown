@@ -32,21 +32,52 @@ class PortfolioController < ApplicationController
 		@team1def11 = @team1.where("year = ?", 2011).pluck("win", "DEFGameMean")
 					
 		#team pt averages by year
-		@teamPts2011 = @team1.where("year = ?", 2011).average("team1pts").round
-		@opponentPts2011 = @team1.where("year = ?", 2011).average("team2pts").round
-		@teamPts2012 = @team1.where("year = ?", 2012).average("team1pts").round
-		@opponentPts2012 = @team1.where("year = ?", 2012).average("team2pts").round
-		@teamPts2013 = @team1.where("year = ?", 2013).average("team1pts").round
-		@opponentPts2013 = @team1.where("year = ?", 2013).average("team2pts").round
-		@teamPts2014 = @team1.where("year = ?", 2014).average("team1pts").round
-		@opponentPts2014 = @team1.where("year = ?", 2014).average("team2pts").round
+			@w11 = @team1.where("year = ?", 2011).where("win = ?", 'W').average("team1pts")
+			@l11 = @team1.where("year = ?", 2011).where("win = ?", 'L').average("team2pts")
+		@teamPts2011 = ((@w11 + @l11)/2).round	
+			@oppw11 = @team1.where("year = ?", 2011).where("win = ?", 'W').average("team2pts")
+			@oppl11 = @team1.where("year = ?", 2011).where("win = ?", 'L').average("team1pts")
+		@opponentPts2011 = ((@oppw11 + @oppl11)/2).round
+		
+			@w12 = @team1.where("year = ?", 2012).where("win = ?", 'W').average("team1pts")
+			@l12 = @team1.where("year = ?", 2012).where("win = ?", 'L').average("team2pts")
+		@teamPts2012 = ((@w12 + @l12)/2).round		
+			@oppw12 = @team1.where("year = ?", 2012).where("win = ?", 'W').average("team2pts")
+			@oppl12 = @team1.where("year = ?", 2012).where("win = ?", 'L').average("team1pts")
+		@opponentPts2012 = ((@oppw12 + @oppl12)/2).round
+
+			@w13 = @team1.where("year = ?", 2013).where("win = ?", 'W').average("team1pts")
+			@l13 = @team1.where("year = ?", 2013).where("win = ?", 'L').average("team2pts")		
+		@teamPts2013 = ((@w13 + @l13)/2).round
+			@oppw13 = @team1.where("year = ?", 2013).where("win = ?", 'W').average("team2pts")
+			@oppl13 = @team1.where("year = ?", 2013).where("win = ?", 'L').average("team1pts")
+		@opponentPts2013 = ((@oppw13 + @oppl13)/2).round
+
+			@w14 = @team1.where("year = ?", 2014).where("win = ?", 'W').average("team1pts")
+			@l14 = @team1.where("year = ?", 2014).where("win = ?", 'L').average("team2pts")			
+		@teamPts2014 = ((@w14 + @l14)/2).round
+			@oppw14 = @team1.where("year = ?", 2014).where("win = ?", 'W').average("team2pts")
+			@oppl14 = @team1.where("year = ?", 2014).where("win = ?", 'L').average("team1pts")
+		@opponentPts2014 = ((@oppw14 + @oppl14)/2).round
+		
 		
 		#league Off average
 		@stat = Stat.all
-		@leagueOPts2011 = @stat.where("win = ?", 'W').where("year = ?", 2011).average("team1pts").round
-		@leagueOPts2012 = @stat.where("win = ?", 'W').where("year = ?", 2012).average("team1pts").round
-		@leagueOPts2013 = @stat.where("win = ?", 'W').where("year = ?", 2013).average("team1pts").round
-		@leagueOPts2014 = @stat.where("win = ?", 'W').where("year = ?", 2014).average("team1pts").round
+			@leaguew11 = @stat.where("win = ?", 'W').where("year = ?", 2011).average("team1pts")
+			@leaguel11 = @stat.where("win = ?", 'L').where("year = ?", 2011).average("team2pts")
+		@leagueOPts2011 = ((@leaguew11 + @leaguel11)/2).round
+		
+			@leaguew12 = @stat.where("win = ?", 'W').where("year = ?", 2012).average("team1pts")
+			@leaguel12 = @stat.where("win = ?", 'L').where("year = ?", 2012).average("team2pts")
+		@leagueOPts2012 = ((@leaguew12 + @leaguel12)/2).round
+		
+			@leaguew13 = @stat.where("win = ?", 'W').where("year = ?", 2013).average("team1pts")
+			@leaguel13 = @stat.where("win = ?", 'L').where("year = ?", 2013).average("team2pts")
+		@leagueOPts2013 = ((@leaguew13 + @leaguel13)/2).round
+		
+			@leaguew14 = @stat.where("win = ?", 'W').where("year = ?", 2014).average("team1pts")
+			@leaguel14 = @stat.where("win = ?", 'L').where("year = ?", 2014).average("team2pts")
+		@leagueOPts2014 = ((@leaguew14 + @leaguel14)/2).round
 	
 		#record by year
 		@win11 = @team1.where("win = ?", 'W').where("year = ?", 2011).count

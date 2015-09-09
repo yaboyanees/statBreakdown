@@ -7,6 +7,7 @@ class RankingController < ApplicationController
 		@teamOrder = Stat.group("id", "team1").order("team1")
 		@currentData = @teamOrder.where("week = ?", @week).where("year = ?", @year)
 	@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")	
+  	@teamCurrent = Stat.where("year = ?", @year).where("week = ?", @week).pluck("CurrentMeanTrend")
   end
 
   def show
