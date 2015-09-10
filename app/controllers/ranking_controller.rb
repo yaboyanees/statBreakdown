@@ -10,7 +10,7 @@ class RankingController < ApplicationController
   	@teamCurrent = Stat.where("year = ?", @year).where("week = ?", @week).pluck("CurrentMeanTrend")	
 	
 	#Season-Q TEAM, Trend-Q TEAM, Season-Q OFF, Trend-Q OFF, Season-Q DEF, Trend-Q DEF
-	@dataValues = Stat.order("short1").where("week = ?", @week).where("year = ?", @year).pluck("short1", "Season2dateMean", "CurrentMeanTrend", "Season2dateOFFMean", "CurrentOFFMeanTrend", "Season2dateDEFMean", "CurrentDEFMeanTrend")
+	@dataValues = Stat.order("team1").where("week = ?", @week).where("year = ?", @year).pluck("short1", "Season2dateMean", "CurrentMeanTrend", "Season2dateOFFMean", "CurrentOFFMeanTrend", "Season2dateDEFMean", "CurrentDEFMeanTrend")
 	#overall record, last 4 games
 		@team1 = Stat.where("short1 = ?", 'ARI')
 		@team2 = Stat.where("short1 = ?", 'ATL')
