@@ -3,17 +3,17 @@ class CreateStats < ActiveRecord::Migration
     create_table :stats do |t|
       t.integer :year    	
       t.integer :week
-      t.float 	:GameMean
-      t.float 	:Season2dateMean
-      t.float 	:CurrentMeanTrend
+      t.integer :GameMean
+      t.integer :Season2dateMean
+      t.integer :CurrentMeanTrend
       
-      t.float 	:OFFGameMean
-      t.float 	:Season2dateOFFMean
-      t.float 	:CurrentOFFMeanTrend
+      t.integer :OFFGameMean
+      t.integer :Season2dateOFFMean
+      t.integer :CurrentOFFMeanTrend
       
-      t.float 	:DEFGameMean
-      t.float 	:Season2dateDEFMean
-      t.float 	:CurrentDEFMeanTrend
+      t.integer :DEFGameMean
+      t.integer :Season2dateDEFMean
+      t.integer :CurrentDEFMeanTrend
       
       t.string 	:win
       t.integer :team1pts

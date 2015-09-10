@@ -12,5 +12,49 @@
 </div>
 <div id="ranking">
 	<%= render partial: 'leagueScript' %>
-	<div id="leagueScatter" style="padding-top: 20px;"></div>
+	<div id="leagueScatter" style="padding: 20px 0 30px 0;"></div>
 </div>
+<table id="example" class="display" cellspacing="0" width="100%">
+	<thead>
+		<tr>
+			 <th>TEAM</th>
+			 <th>Season-Q TEAM</th>
+			 <th>Trend-Q TEAM</th>
+			 <th>Season-Q OFF</th>
+			 <th>Trend-Q OFF</th>
+			 <th>Season-Q DEF</th>
+			 <th>Trend-Q DEF</th>
+		</tr>
+	</thead>
+
+	<tfoot>
+		<tr>
+			 <th>TEAM</th>
+			 <th>Season-Q TEAM</th>
+			 <th>Trend-Q TEAM</th>
+			 <th>Season-Q OFF</th>
+			 <th>Trend-Q OFF</th>
+			 <th>Season-Q DEF</th>
+			 <th>Trend-Q DEF</th>
+		</tr>
+	</tfoot>
+
+	<tbody>
+		<tr>
+		<% @dataValues.each do |val| %>     
+			 <td><%= val[0] %></td>
+			 <td><%= val[1] %></td>
+			 <td><%= val[2] %></td>			 
+			 <td><%= val[3] %></td>
+			 <td><%= val[4] %></td>
+			 <td><%= val[5] %></td>
+			 <td><%= val[6] %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+</script>

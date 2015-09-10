@@ -772,7 +772,6 @@ table tbody+tbody{
 .x-btn,.button,[type="submit"]{
 	display:inline-block;
 	position:relative;
-	border:1px solid #ac1100;
 	padding:0.563em 1.125em 0.813em;
 	cursor:pointer;
 	font-size:16px;
@@ -780,9 +779,6 @@ table tbody+tbody{
 	text-align:center;
 	vertical-align:middle;
 	color:#fff;
-	background-color:#ff2a13;
-	-webkit-transition:all 0.15s linear;
-	transition:all 0.15s linear
 }
 
 .x-btn:hover,.button:hover,[type="submit"]:hover{

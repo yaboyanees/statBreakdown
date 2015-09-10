@@ -1,5 +1,6 @@
 <title>Stats Upload | The Q5</title>
-<h1>Upload Stats</h1>
+<div id="upload" style="margin: 0 0 0 30px;">
+<h2 style="padding: 0; margin: 0;">Upload Stats</h2>
 <%= form_tag import_stats_path, multipart: true do %>
 	<%= file_field_tag :file %>
 	<%= submit_tag "Upload" %>
@@ -9,3 +10,4 @@
 <br />
 <%= link_to 'Reset All', kill_stats_url, :method => :delete %>
 <br />
+</div>

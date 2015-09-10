@@ -1,53 +1,55 @@
 <% a = @teamValues %>
 <% b = @teamNames %>
 <% c = @team1current %>
-<% if c < -0.4 %>
+<% if c < -201 %>
 	<% c1 = 5 %>
-<% elsif c < -0.3 %>
+<% elsif c < -160 %>
 	<% c1 = 8 %>
-<% elsif c < -0.2 %>
+<% elsif c < -136 %>
 	<% c1 = 10 %>
-<% elsif c < -0.1 %>
+<% elsif c < -32 %>
 	<% c1 = 13 %>
 <% elsif c < 0 %>
 	<% c1 = 15 %>
-<% elsif c >= 0 %>
+<% elsif c < 32 %>
 	<% c1 = 25 %>
-<% elsif c > 0.1 %>
-	<% c1 = 38 %>
-<% elsif c > 0.2 %>
+<% elsif c < 104 %>
+	<% c1 = 30 %>
+<% elsif c < 136 %>
 	<% c1 = 35 %>
-<% elsif c > 0.3 %>
+<% elsif c < 160  %>
 	<% c1 = 38 %>
-<% elsif c > 0.4  %>
+<% elsif c < 201  %>
 	<% c1 = 40 %>
 <% else %>
 	<% c1 = 50 %>
 <% end %>
+
 <% d = @team2current %>
-<% if d < -0.4 %>
+<% if d < -201 %>
 	<% d1 = 5 %>
-<% elsif d < -0.3 %>
+<% elsif d < -160 %>
 	<% d1 = 8 %>
-<% elsif d < -0.2 %>
+<% elsif d < -136 %>
 	<% d1 = 10 %>
-<% elsif d < -0.1 %>
+<% elsif d < -32 %>
 	<% d1 = 13 %>
 <% elsif d < 0 %>
 	<% d1 = 15 %>
-<% elsif d >= 0 %>
+<% elsif d < 32 %>
 	<% d1 = 25 %>
-<% elsif d > 0.1 %>
-	<% d1 = 38 %>
-<% elsif d > 0.2 %>
+<% elsif d < 104 %>
+	<% d1 = 30 %>
+<% elsif d < 136 %>
 	<% d1 = 35 %>
-<% elsif d > 0.3 %>
+<% elsif d < 160  %>
 	<% d1 = 38 %>
-<% elsif d > 0.4  %>
+<% elsif d < 201  %>
 	<% d1 = 40 %>
 <% else %>
 	<% d1 = 50 %>
 <% end %>
+
 <script type="text/javascript">
 $(function () {
 
@@ -395,4 +397,3 @@ $(function () {
 
 });
 </script>
-
