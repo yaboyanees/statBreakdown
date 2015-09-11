@@ -4,6 +4,10 @@
 		var gameOFF = <%= raw @team1offAll.to_json %>
 		var gameDEF = <%= raw @team1defAll.to_json %>
 
+		var gameTeam15 = <%= raw @team1tmCurrent.to_json %>
+		var gameOFF15 = <%= raw @team1offCurrent.to_json %>
+		var gameDEF15 = <%= raw @team1defCurrent.to_json %>
+
 		var gameTeam14 = <%= raw @team1tm14.to_json %>
 		var gameOFF14 = <%= raw @team1off14.to_json %>
 		var gameDEF14 = <%= raw @team1def14.to_json %>
@@ -32,7 +36,7 @@
 			}
 		},
 		subtitle: {
-			text: 'Team Performance By Week (2011-2014)',
+			text: 'Team Performance By Week (2011-Current)',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -108,6 +112,49 @@
 					text: '' 
 					}, 
 					{ 
+					text: 'Team Performance By Week (2015)'
+				});
+				chart.xAxis[0].update({
+					categories: <%= @team1wk  %>
+				});
+				chart.addSeries({
+					name: 'Team',
+					type: 'line',
+					color: '#006E29',  
+				    data: gameTeam15,
+					marker: {
+						symbol: 'circle'
+					},             
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					type: 'line',
+					color: '#333333',  
+				    data: gameOFF15,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					type: 'line',
+					color: '#08aeff',  
+				    data: gameDEF15,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				});   
+			}
+			
+			else if (value == 'b') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
 					text: 'Team Performance By Week (2014)'
 				});
 				chart.xAxis[0].update({
@@ -120,7 +167,7 @@
 				    data: gameTeam14,
 					marker: {
 						symbol: 'circle'
-					},             
+					},                  
 				});   
 				chart.addSeries({
 					name: 'Offense',
@@ -141,8 +188,8 @@
 					},                  
 				});   
 			}
-
-			else if (value == 'b') 
+			
+			else if (value == 'c') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -185,7 +232,7 @@
 				});   
 			}
 
-			else if (value == 'c') 
+			else if (value == 'd') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -228,7 +275,7 @@
 				});   
 			}
 
-			else if (value == 'd') 
+			else if (value == 'e') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -271,7 +318,7 @@
 				});   
 			}
 			
-			else if (value == 'e') 
+			else if (value == 'f') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -280,7 +327,7 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2011-2014)'
+					text: 'Team Performance By Week (2011-Current)'
 				});
 				chart.xAxis[0].update({
 					categories: ['']

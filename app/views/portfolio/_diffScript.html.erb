@@ -1,5 +1,7 @@
 <script type="text/javascript">
 	$(function () {
+		var winArray15 = <%= raw @winValue15.to_json %>
+		var lossArray15 = <%= raw @lossValue15.to_json %>
 		var winArray14 = <%= raw @winValue14.to_json %>
 		var lossArray14 = <%= raw @lossValue14.to_json %>
 		var winArray13 = <%= raw @winValue13.to_json %>
@@ -199,6 +201,36 @@
 					type: 'scatter',
 					color: '#333333',  
 				    data: lossArray11,
+					marker: {
+						symbol: 'triangle-down'
+					},            
+				});             
+			}
+			
+			else if (value == 'e') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Win vs Loss PT Differential By Week (Current)'
+				});
+				chart.addSeries({
+					name: 'WIN',
+					type: 'scatter',
+					color: '#006E29',  
+				    data: winArray15,
+					marker: {
+						symbol: 'triangle'
+					},            
+				});               
+				chart.addSeries({
+					name: 'LOSS',
+					type: 'scatter',
+					color: '#333333',  
+				    data: lossArray15,
 					marker: {
 						symbol: 'triangle-down'
 					},            

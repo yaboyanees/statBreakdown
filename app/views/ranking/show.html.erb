@@ -1,9 +1,9 @@
-<title><%= @year %> Rankings | The Q5</title>
+<title><%= params[:id].to_s %> Rankings | The Q5</title>
 <div class="x-container max width">
 	<div class="x-landmark-breadcrumbs-wrap">
 		<div class="x-landmark">
 			<h1 class="h-landmark entry-title">
-				<span><%= @year %> Q5 Rankings</span><br /><%= link_to '2014', ranking_path(:id => @yearArray[3]) %> | <%= link_to '2013', ranking_path(:id => @yearArray[2]) %> | <%= link_to '2012', ranking_path(:id => @yearArray[1]) %> | <%= link_to '2011', ranking_path(:id => @yearArray[0]) %>
+				<span><%= params[:id].to_s  %> Q5 Rankings</span><br /><%= link_to '2014', ranking_path(:id => @yearDisplay[3]) %> | <%= link_to '2013', ranking_path(:id => @yearDisplay[2]) %> | <%= link_to '2012', ranking_path(:id => @yearDisplay[1]) %> | <%= link_to '2011', ranking_path(:id => @yearDisplay[0]) %>
 			</h1>
 		</div>
 		<div class="x-breadcrumbs-wrap">
@@ -13,7 +13,7 @@
 	</div>
 </div>
 <div id="ranking">
-	<%= render partial: 'leagueScript' %>
+	<%= render partial: 'leagueHistorical' %>
 	<div id="leagueScatter" style="padding: 20px 0 40px 0;"></div>
 </div>
 <table id="example" class="display" cellspacing="0" width="100%">

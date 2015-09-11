@@ -9,12 +9,13 @@ class PortfolioController < ApplicationController
 		@team2 = @team1.pluck("team2")
 		@teamNames = @team1.uniq.pluck("team1") 
 		@team1wk = @team1.order("week").uniq.pluck("week")
-
+		@year = Stat.pluck("year").last
+		
 		#return team1 data arrays by year
 		@team1tmAll = @team1.pluck("win", "GameMean")	
 		@team1offAll = @team1.pluck("win", "OFFGameMean")
 		@team1defAll = @team1.pluck("win", "DEFGameMean")
-		
+
 		@team1tm14 = @team1.where("year = ?", 2014).pluck("win", "GameMean")	
 		@team1off14 = @team1.where("year = ?", 2014).pluck("win", "OFFGameMean")
 		@team1def14 = @team1.where("year = ?", 2014).pluck("win", "DEFGameMean")
@@ -59,8 +60,7 @@ class PortfolioController < ApplicationController
 			@oppw14 = @team1.where("year = ?", 2014).where("win = ?", 'W').average("team2pts")
 			@oppl14 = @team1.where("year = ?", 2014).where("win = ?", 'L').average("team1pts")
 		@opponentPts2014 = ((@oppw14 + @oppl14)/2).round
-		
-		
+
 		#league Off average
 		@stat = Stat.all
 			@leaguew11 = @stat.where("win = ?", 'W').where("year = ?", 2011).average("team1pts")
@@ -78,7 +78,30 @@ class PortfolioController < ApplicationController
 			@leaguew14 = @stat.where("win = ?", 'W').where("year = ?", 2014).average("team1pts")
 			@leaguel14 = @stat.where("win = ?", 'L').where("year = ?", 2014).average("team2pts")
 		@leagueOPts2014 = ((@leaguew14 + @leaguel14)/2).round
-	
+
+		if @team1.where("year = ?", 2015).present?
+			@team1tm15 = @team1.where("year = ?", 2015).pluck("win", "GameMean") 	
+			@team1off15 = @team1.where("year = ?", 2015).pluck("win", "OFFGameMean")
+			@team1def15 = @team1.where("year = ?", 2015).pluck("win", "DEFGameMean")
+		
+			@w15 = @team1.where("year = ?", 2015).where("win = ?", 'W').average("team1pts")
+			@l15 = @team1.where("year = ?", 2015).where("win = ?", 'L').average("team2pts")			
+			@teamPts2015 = ((@w15 + @l15)/2).round
+				@oppw15 = @team1.where("year = ?", 2015).where("win = ?", 'W').average("team2pts")
+				@oppl15 = @team1.where("year = ?", 2015).where("win = ?", 'L').average("team1pts")
+			@opponentPts2015 = ((@oppw15 + @oppl15)/2).round	
+
+				@leaguew15 = @stat.where("win = ?", 'W').where("year = ?", 2015).average("team1pts")
+				@leaguel15 = @stat.where("win = ?", 'L').where("year = ?", 2015).average("team2pts")
+			@leagueOPts2015 = ((@leaguew15 + @leaguel15)/2).round
+
+			@win15 = @team1.where("win = ?", 'W').where("year = ?", 2015).count
+			@loss15 = @team1.where("win = ?", 'L').where("year = ?", 2015).count			
+			@winValue15 = @team1.where("win = ?", 'W').where("year = ?", 2015).pluck("week", "diff")
+			@lossValue15 = @team1.where("win = ?", 'L').where("year = ?", 2015).pluck("week", "diff")
+			@record15 = @team1.where("year = ?", 2015).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
+		end
+		
 		#record by year
 		@win11 = @team1.where("win = ?", 'W').where("year = ?", 2011).count
 		@loss11 = @team1.where("win = ?", 'L').where("year = ?", 2011).count
