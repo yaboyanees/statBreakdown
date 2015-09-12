@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-	resources :portfolio
-	resources :ranking
+  root :to => 'splash#index'
+
+	resources :portfolio, path: '/my-team/'
+	resources :ranking, path: '/rankings/'
 	
-	resources :home, path: '/team/'
-	root :to => 'home#index'
+	resources :home, path: '/match-up/'
 	
 	resources :stats, except: [:destroy] do
 		collection { post :import }

@@ -834,6 +834,14 @@ $(function () {
                 depth: 10
             }
         },
+        tooltip: {
+            formatter: function() {return ' ' +
+                this.series.name + '<br />' +
+                'TM: ' + this.point.x + '<br />' +
+                'OFF: ' + this.point.y + '<br />' +
+                'DEF: ' + this.point.z;
+            }
+        },
         legend: {
             enabled: false
         },

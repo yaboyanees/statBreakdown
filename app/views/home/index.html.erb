@@ -1,11 +1,12 @@
-<title>Match-Ups | The Q5</title>
+<title>Match-Up | The Q5</title>
 <div class="x-container max width">
 	<div class="x-landmark-breadcrumbs-wrap">
 		<div class="x-landmark">
-			<h1 class="h-landmark entry-title"><span>Match-Ups</span></h1>
+			<h1 class="h-landmark entry-title"><span>Match-Up</span></h1>
+			<%= link_to "http://www.theQ5.com/tuitorial" do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
 		</div>
 		<div class="x-breadcrumbs-wrap">
-			<div class="x-breadcrumbs"><a href="http://theqfive.com"><span class="home"><i class="x-icon-home" data-x-icon="&#8962;"></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon=">"></i></span> <span class="current" style="color: #28323F;">MATCH-UPS</span>
+			<div class="x-breadcrumbs"><a href="http://theq5.com"><span class="home"><i class="x-icon-home" data-x-icon="&#8962;" style="font-size: 18px; color: #333333;"></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon="|"></i></span> <span class="current" style="color: #28323F;">Q5 ZONE</span>
 			</div>              
 		</div>
 	</div>
@@ -76,14 +77,14 @@
 	</div>
 	<br style="clear:both" />
 	<div id="column"></div>
-	<div id="scatter"></div>
-	<p class="newMatch"><%= link_to 'New Matchup', root_path %></p>
+	<div id="scatter" style="padding-top: 35px;"></div>
+	<p class="newMatch"><%= link_to 'New Matchup', home_index_path, class: 'a' %></p>
 <% else %>
 	<div id="teamMatchup">
-		<h2>Select Matchup</h2>
-		<%= form_tag(root_path, :method => "get", id: "search-form", :validate=>true) do %>
-			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team' %>
-			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team' %><br /><br />
+		<h2>Match-Up Teams</h2>
+		<%= form_tag(home_index_path, :method => "get", id: "search-form", :validate=>true) do %>
+			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %><i> VS </i>
+			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team 2' %><br /><br /><br />
 			<%= submit_tag "View Matchup", :name => nil %>
 		<% end %>
 	</div>

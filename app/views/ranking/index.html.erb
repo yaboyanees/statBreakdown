@@ -3,11 +3,12 @@
 	<div class="x-landmark-breadcrumbs-wrap">
 		<div class="x-landmark">
 			<h1 class="h-landmark entry-title">
-				<span><%= @year %> Q5 Rankings</span><br /><%= link_to '2014', ranking_path(:id => @yearArray[3]) %> | <%= link_to '2013', ranking_path(:id => @yearArray[2]) %> | <%= link_to '2012', ranking_path(:id => @yearArray[1]) %> | <%= link_to '2011', ranking_path(:id => @yearArray[0]) %>
+				<span>Current Q5 Rankings</span><br /><%= link_to '2014', ranking_path(:id => @yearArray[3]) %> | <%= link_to '2013', ranking_path(:id => @yearArray[2]) %> | <%= link_to '2012', ranking_path(:id => @yearArray[1]) %> | <%= link_to '2011', ranking_path(:id => @yearArray[0]) %>
 			</h1>
+			<%= link_to "http://www.theQ5.com/tuitorial" do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
 		</div>
 		<div class="x-breadcrumbs-wrap">
-			<div class="x-breadcrumbs"><a href="http://theqfive.com"><span class="home"><i class="x-icon-home" data-x-icon="&#8962;"></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon=">"></i></span> <span class="current" style="color: #28323F;">RANKINGS</span>
+			<div class="x-breadcrumbs"><a href="http://theq5.com"><span class="home"><i class="x-icon-home" data-x-icon="&#8962;" style="font-size: 18px; color: #333333;"></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon="|"></i></span> <span class="current" style="color: #28323F;">Q5 ZONE</span>
 			</div>              
 		</div>
 	</div>

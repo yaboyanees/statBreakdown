@@ -837,7 +837,14 @@ $(function () {
         legend: {
             enabled: false
         },
-
+        tooltip: {
+            formatter: function() {return ' ' +
+                this.series.name + '<br />' +
+                'TM: ' + this.point.x + '<br />' +
+                'OFF: ' + this.point.y + '<br />' +
+                'DEF: ' + this.point.z;
+            }
+        },
         series: [{  
         	name: '<%= b[0] %>',
             data: [<%= a[0] %>],

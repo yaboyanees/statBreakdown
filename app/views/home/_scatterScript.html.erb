@@ -77,9 +77,9 @@ $(function () {
 			backgroundColor:'rgba(255, 255, 255, 0.1)',
             options3d: {
                 enabled: true,
-                alpha: 10,
-                beta: 30,
-                depth: 250,
+                alpha: 5,
+                beta: 5,
+                depth: 200,
                 viewDistance: 5,
 
                 frame: {
@@ -117,7 +117,14 @@ $(function () {
                 depth: 10
             }
         },
-
+        tooltip: {
+            formatter: function() {return ' ' +
+                this.series.name + '<br />' +
+                'TM: ' + this.point.x + '<br />' +
+                'OFF: ' + this.point.y + '<br />' +
+                'DEF: ' + this.point.z;
+            }
+        },
         legend: {
             enabled: false
         },
