@@ -3,31 +3,39 @@
 		var gameTeam = <%= raw @team1tmAll.to_json %>
 		var gameOFF = <%= raw @team1offAll.to_json %>
 		var gameDEF = <%= raw @team1defAll.to_json %>
+		var games2dm = <%= raw @team1defAll.to_json %>
 
-		var gameTeam15 = <%= raw @team1tmCurrent.to_json %>
-		var gameOFF15 = <%= raw @team1offCurrent.to_json %>
-		var gameDEF15 = <%= raw @team1defCurrent.to_json %>
+		var gameTeam15 = <%= raw @team1tm15.to_json %>
+		var gameOFF15 = <%= raw @team1off15.to_json %>
+		var gameDEF15 = <%= raw @team1def15.to_json %>
+		var games2dm15 = <%= raw @team1s2dm15.to_json %>
 
 		var gameTeam14 = <%= raw @team1tm14.to_json %>
 		var gameOFF14 = <%= raw @team1off14.to_json %>
 		var gameDEF14 = <%= raw @team1def14.to_json %>
+		var games2dm14 = <%= raw @team1s2dm14.to_json %>
 		
 		var gameTeam13 = <%= raw @team1tm13.to_json %>
 		var gameOFF13 = <%= raw @team1off13.to_json %>
 		var gameDEF13 = <%= raw @team1def13.to_json %>
+		var games2dm13 = <%= raw @team1s2dm13.to_json %>
 		
 		var gameTeam12 = <%= raw @team1tm12.to_json %>
 		var gameOFF12 = <%= raw @team1off12.to_json %>
 		var gameDEF12 = <%= raw @team1def12.to_json %>
+		var games2dm12 = <%= raw @team1s2dm12.to_json %>
 		
 		var gameTeam11 = <%= raw @team1tm11.to_json %>
 		var gameOFF11 = <%= raw @team1off11.to_json %>
 		var gameDEF11 = <%= raw @team1def11.to_json %>
+		var games2dm11 = <%= raw @team1s2dm11.to_json %>
 		var chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'teamChart',
 			fontSize:'100%',
-			backgroundColor:'rgba(255, 255, 255, 0.1)'
+			backgroundColor:'rgba(255, 255, 255, 0.1)',
+			type: 'scatter',
+            zoomType: 'x'
 		},
 		title: {
 			text: '',
@@ -43,6 +51,9 @@
 		},
 		xAxis: {
 			categories: [''],
+			labels: {
+				enabled: false
+			},
 			title: {
 				style: {
                     fontSize:'1.7vmax',
@@ -63,19 +74,20 @@
                     radius: 5
                 }
             },
-			line: {
+			scatter: {
 				dataLabels: {
 					enabled: false,
 				},
 				enableMouseTracking: true
 			}
 		},
-		tooltip: {
-            crosshairs: true,
-            shared: true
+        tooltip: {
+            formatter: function() {return ' ' +
+                this.series.name + '<br />' +
+                'Result: ' + '<b>' + this.point.name + '</b>';
+            }
         },
 		series: [{
-			type: 'line',
 			name: 'Team',
 			color: '#006E29',
 			data: gameTeam,
@@ -83,7 +95,6 @@
                 symbol: 'circle'
             },
 		}, {
-			type: 'line',
 			name: 'Offense',
 			color: '#333333',
 			data: gameOFF,
@@ -91,13 +102,20 @@
                 symbol: 'triangle'
             },
 		}, {
-			type: 'line',
 			name: 'Defense',
 			color: '#08aeff',
 			data: gameDEF,
 			marker: {
                 symbol: 'triangle-down'
-            },	
+            },
+        }, {
+			type: 'spline',
+			name: 'Season 2 Date Mean',
+			color: '#c11600',
+			data: games2dm,
+			marker: {
+				enabled: false
+            },
 		}]
 	});
 		$(".rollup").change(function() {
@@ -105,6 +123,7 @@
 
 			if (value == 'a') 
 			{
+				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -119,7 +138,6 @@
 				});
 				chart.addSeries({
 					name: 'Team',
-					type: 'line',
 					color: '#006E29',  
 				    data: gameTeam15,
 					marker: {
@@ -128,7 +146,6 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					type: 'line',
 					color: '#333333',  
 				    data: gameOFF15,
 					marker: {
@@ -137,17 +154,26 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					type: 'line',
 					color: '#08aeff',  
 				    data: gameDEF15,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});   
+				chart.addSeries({
+					name: 'Season 2 Date Mean',
+					type: 'spline',
+					color: '#c11600',  
+				    data: games2dm15,
+					marker: {
+						enabled: false
+					},                  
+				}); 
 			}
 			
 			else if (value == 'b') 
 			{
+				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -162,7 +188,6 @@
 				});
 				chart.addSeries({
 					name: 'Team',
-					type: 'line',
 					color: '#006E29',  
 				    data: gameTeam14,
 					marker: {
@@ -171,7 +196,6 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					type: 'line',
 					color: '#333333',  
 				    data: gameOFF14,
 					marker: {
@@ -180,17 +204,26 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					type: 'line',
 					color: '#08aeff',  
 				    data: gameDEF14,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});   
+				chart.addSeries({
+					name: 'Season 2 Date Mean',
+					type: 'spline',
+					color: '#c11600',  
+				    data: games2dm14,
+					marker: {
+						enabled: false
+					},                  
+				}); 
 			}
 			
 			else if (value == 'c') 
 			{
+				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -205,7 +238,6 @@
 				});
 				chart.addSeries({
 					name: 'Team',
-					type: 'line',
 					color: '#006E29',  
 				    data: gameTeam13,
 					marker: {
@@ -214,7 +246,6 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					type: 'line',
 					color: '#333333',  
 				    data: gameOFF13,
 					marker: {
@@ -223,17 +254,26 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					type: 'line',
 					color: '#08aeff',  
 				    data: gameDEF13,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
-				});   
+				});  
+				chart.addSeries({
+					name: 'Season 2 Date Mean',
+					type: 'spline',
+					color: '#c11600',  
+				    data: games2dm13,
+					marker: {
+						enabled: false
+					},                  
+				});  
 			}
 
 			else if (value == 'd') 
 			{
+				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -248,7 +288,6 @@
 				});
 				chart.addSeries({
 					name: 'Team',
-					type: 'line',
 					color: '#006E29',  
 				    data: gameTeam12,
 					marker: {
@@ -257,7 +296,6 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					type: 'line',
 					color: '#333333',  
 				    data: gameOFF12,
 					marker: {
@@ -266,17 +304,26 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					type: 'line',
 					color: '#08aeff',  
 				    data: gameDEF12,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
-				});   
+				});
+				chart.addSeries({
+					name: 'Season 2 Date Mean',
+					type: 'spline',
+					color: '#c11600',  
+				    data: games2dm12,
+					marker: {
+						enabled: false
+					},                  
+				}); 
 			}
 
 			else if (value == 'e') 
 			{
+				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -291,7 +338,6 @@
 				});
 				chart.addSeries({
 					name: 'Team',
-					type: 'line',
 					color: '#006E29',  
 				    data: gameTeam11,
 					marker: {
@@ -300,7 +346,6 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					type: 'line',
 					color: '#333333',  
 				    data: gameOFF11,
 					marker: {
@@ -309,17 +354,26 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					type: 'line',
 					color: '#08aeff',  
 				    data: gameDEF11,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
-				});   
+				}); 
+				chart.addSeries({
+					name: 'Season 2 Date Mean',
+					type: 'spline',
+					color: '#c11600',  
+				    data: games2dm11,
+					marker: {
+						enabled: false
+					},                  
+				}); 
 			}
 			
 			else if (value == 'f') 
 			{
+				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -334,7 +388,6 @@
 				});
 				chart.addSeries({
 					name: 'Team',
-					type: 'line',
 					color: '#006E29',  
 				    data: gameTeam,
 					marker: {
@@ -343,7 +396,6 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					type: 'line',
 					color: '#333333',  
 				    data: gameOFF,
 					marker: {
@@ -352,13 +404,21 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					type: 'line',
 					color: '#08aeff',  
 				    data: gameDEF,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});   
+				chart.addSeries({
+					name: 'Season 2 Date Mean',
+					type: 'spline',
+					color: '#c11600',  
+				    data: games2dm,
+					marker: {
+						enabled: false
+					},                  
+				}); 
 			}
 			else {
 			   alert("Error!");   

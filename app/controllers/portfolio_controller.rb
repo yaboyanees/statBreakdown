@@ -15,22 +15,32 @@ class PortfolioController < ApplicationController
 		@team1tmAll = @team1.pluck("win", "GameMean")	
 		@team1offAll = @team1.pluck("win", "OFFGameMean")
 		@team1defAll = @team1.pluck("win", "DEFGameMean")
+		@team1s2dmAll = @team1.pluck("win", "Season2dateMean")
+
+		@team1tm15 = @team1.where("year = ?", 2015).pluck("win", "GameMean") 	
+		@team1off15 = @team1.where("year = ?", 2015).pluck("win", "OFFGameMean")
+		@team1def15 = @team1.where("year = ?", 2015).pluck("win", "DEFGameMean")
+		@team1s2dm15 = @team1.where("year = ?", 2015).pluck("win", "Season2dateMean")
 
 		@team1tm14 = @team1.where("year = ?", 2014).pluck("win", "GameMean")	
 		@team1off14 = @team1.where("year = ?", 2014).pluck("win", "OFFGameMean")
 		@team1def14 = @team1.where("year = ?", 2014).pluck("win", "DEFGameMean")
+		@team1s2dm14 = @team1.where("year = ?", 2014).pluck("win", "Season2dateMean")
 		
 		@team1tm13 = @team1.where("year = ?", 2013).pluck("win", "GameMean")
 		@team1off13 = @team1.where("year = ?", 2013).pluck("win", "OFFGameMean")
 		@team1def13 = @team1.where("year = ?", 2013).pluck("win", "DEFGameMean")
+		@team1s2dm13 = @team1.where("year = ?", 2013).pluck("win", "win", "Season2dateMean")
 		
 		@team1tm12 = @team1.where("year = ?", 2012).pluck("win", "GameMean")	
 		@team1off12 = @team1.where("year = ?", 2012).pluck("win", "OFFGameMean")
 		@team1def12 = @team1.where("year = ?", 2012).pluck("win", "DEFGameMean")
+		@team1s2dm12 = @team1.where("year = ?", 2012).pluck("win", "Season2dateMean")
 		
 		@team1tm11 = @team1.where("year = ?", 2011).pluck("win", "GameMean")	
 		@team1off11 = @team1.where("year = ?", 2011).pluck("win", "OFFGameMean")
 		@team1def11 = @team1.where("year = ?", 2011).pluck("win", "DEFGameMean")
+		@team1s2dm11 = @team1.where("year = ?", 2011).pluck("win", "Season2dateMean")
 					
 		#team pt averages by year
 			@w11 = @team1.where("year = ?", 2011).where("win = ?", 'W').average("team1pts")
@@ -60,6 +70,30 @@ class PortfolioController < ApplicationController
 			@oppw14 = @team1.where("year = ?", 2014).where("win = ?", 'W').average("team2pts")
 			@oppl14 = @team1.where("year = ?", 2014).where("win = ?", 'L').average("team1pts")
 		@opponentPts2014 = ((@oppw14 + @oppl14)/2).round
+		
+			@w15 = @team1.where("year = ?", 2015).where("win = ?", 'W').average("team1pts")
+			@l15 = @team1.where("year = ?", 2015).where("win = ?", 'L').average("team2pts")			
+		if @w15.present? && @l15.present?
+			@teamPts2015 = ((@w15 + @l15)/2).round
+		elsif @w15.present?
+			@teamPts2015 = (@w15).round
+		elsif @l15.present?
+			@teamPts2015 = (@l15).round		
+		else
+			@teamPts2015 = 0
+		end
+
+			@oppw15 = @team1.where("year = ?", 2015).where("win = ?", 'W').average("team2pts")
+			@oppl15 = @team1.where("year = ?", 2015).where("win = ?", 'L').average("team1pts")
+		if @oppw15.present? && @oppl15.present?
+			@opponentPts2015 = ((@oppw15 + @oppl15)/2).round
+		elsif @oppw15.present?
+			@opponentPts2015 = (@oppw15).round
+		elsif @oppl15.present?
+			@opponentPts2015 = (@oppl15).round		
+		else
+			@opponentPts2015 = 0
+		end
 
 		#league Off average
 		@stat = Stat.all
@@ -79,28 +113,9 @@ class PortfolioController < ApplicationController
 			@leaguel14 = @stat.where("win = ?", 'L').where("year = ?", 2014).average("team2pts")
 		@leagueOPts2014 = ((@leaguew14 + @leaguel14)/2).round
 
-		if @team1.where("year = ?", 2015).present?
-			@team1tm15 = @team1.where("year = ?", 2015).pluck("win", "GameMean") 	
-			@team1off15 = @team1.where("year = ?", 2015).pluck("win", "OFFGameMean")
-			@team1def15 = @team1.where("year = ?", 2015).pluck("win", "DEFGameMean")
-		
-			@w15 = @team1.where("year = ?", 2015).where("win = ?", 'W').average("team1pts")
-			@l15 = @team1.where("year = ?", 2015).where("win = ?", 'L').average("team2pts")			
-			@teamPts2015 = ((@w15 + @l15)/2).round
-				@oppw15 = @team1.where("year = ?", 2015).where("win = ?", 'W').average("team2pts")
-				@oppl15 = @team1.where("year = ?", 2015).where("win = ?", 'L').average("team1pts")
-			@opponentPts2015 = ((@oppw15 + @oppl15)/2).round	
-
-				@leaguew15 = @stat.where("win = ?", 'W').where("year = ?", 2015).average("team1pts")
-				@leaguel15 = @stat.where("win = ?", 'L').where("year = ?", 2015).average("team2pts")
-			@leagueOPts2015 = ((@leaguew15 + @leaguel15)/2).round
-
-			@win15 = @team1.where("win = ?", 'W').where("year = ?", 2015).count
-			@loss15 = @team1.where("win = ?", 'L').where("year = ?", 2015).count			
-			@winValue15 = @team1.where("win = ?", 'W').where("year = ?", 2015).pluck("week", "diff")
-			@lossValue15 = @team1.where("win = ?", 'L').where("year = ?", 2015).pluck("week", "diff")
-			@record15 = @team1.where("year = ?", 2015).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
-		end
+			@leaguew15 = @stat.where("win = ?", 'W').where("year = ?", 2015).average("team1pts")
+			@leaguel15 = @stat.where("win = ?", 'L').where("year = ?", 2015).average("team2pts")
+		@leagueOPts2015 = ((@leaguew15 + @leaguel15)/2).round
 		
 		#record by year
 		@win11 = @team1.where("win = ?", 'W').where("year = ?", 2011).count
@@ -114,8 +129,13 @@ class PortfolioController < ApplicationController
 
 		@win14 = @team1.where("win = ?", 'W').where("year = ?", 2014).count
 		@loss14 = @team1.where("win = ?", 'L').where("year = ?", 2014).count
+
+		@win15 = @team1.where("win = ?", 'W').where("year = ?", 2015).count
+		@loss15 = @team1.where("win = ?", 'L').where("year = ?", 2015).count	
 		
 		#score differences by win and loss
+		@winValue15 = @team1.where("win = ?", 'W').where("year = ?", 2015).pluck("week", "diff")
+		@lossValue15 = @team1.where("win = ?", 'L').where("year = ?", 2015).pluck("week", "diff")
 		@winValue14 = @team1.where("win = ?", 'W').where("year = ?", 2014).pluck("week", "diff")
 		@lossValue14 = @team1.where("win = ?", 'L').where("year = ?", 2014).pluck("week", "diff")
 		@winValue13 = @team1.where("win = ?", 'W').where("year = ?", 2013).pluck("week", "diff")
@@ -126,6 +146,7 @@ class PortfolioController < ApplicationController
 		@lossValue11 = @team1.where("win = ?", 'L').where("year = ?", 2011).pluck("week", "diff")
 	
 		#team schedule by season
+		@record15 = @team1.where("year = ?", 2015).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
 		@record14 = @team1.where("year = ?", 2014).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
 		@record13 = @team1.where("year = ?", 2013).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
 		@record12 = @team1.where("year = ?", 2012).pluck("year", "week", "win", "team2", "team1pts", "team2pts", "id", "url")
