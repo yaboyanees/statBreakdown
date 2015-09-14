@@ -1,4 +1,6 @@
 <title><%= @year %> Rankings | The Q5</title>
+<% a = @winArray %>
+<% b = @lossArray %>
 <div class="x-container max width">
 	<div class="x-landmark-breadcrumbs-wrap">
 		<div class="x-landmark">
@@ -17,22 +19,26 @@
 	<%= render partial: 'leagueScript' %>
 	<div id="leagueScatter" style="padding: 20px 0 40px 0;"></div>
 </div>
-<table id="example" class="display" cellspacing="0" width="100%">
+<table id="sortTable" class="display" cellspacing="0" width="100%">
 	<thead>
 		<tr>
-			 <th>&#11014; TEAM &#11015;</th>
-			 <th>&#11014; Season-Q TEAM &#11015;</th>
-			 <th>&#11014; Trend-Q TEAM &#11015;</th>
-			 <th>&#11014; Season-Q OFF &#11015;</th>
-			 <th>&#11014; Trend-Q OFF &#11015;</th>
-			 <th>&#11014; Season-Q DEF &#11015;</th>
-			 <th>&#11014; Trend-Q DEF &#11015;</th>
+			 <th>&#11014; TEAM</th>
+			 <th>&#11014; Win</th>
+			 <th>&#11014; Loss</th>
+			 <th>&#11014; Season-Q TEAM</th>
+			 <th>&#11014; Trend-Q TEAM</th>
+			 <th>&#11014; Season-Q OFF</th>
+			 <th>&#11014; Trend-Q OFF</th>
+			 <th>&#11014; Season-Q DEF</th>
+			 <th>&#11014; Trend-Q DEF</th>
 		</tr>
 	</thead>
 
 	<tfoot>
 		<tr>
 			 <th>TEAM</th>
+			 <th>Win</th>
+			 <th>Loss</th>
 			 <th>Season-Q TEAM</th>
 			 <th>Trend-Q TEAM</th>
 			 <th>Season-Q OFF</th>
@@ -44,20 +50,25 @@
 
 	<tbody>
 		<tr>
-		<% @dataValues.each do |val| %>     
+		<% i = 0 %>
+		<% @dataValues.each do |val| %>   
 			 <td><%= val[0] %></td>
+			 <td><%= a[i] %></td>
+			 <td><%= b[i] %></td>
 			 <td><%= val[1] %></td>
 			 <td><%= val[2] %></td>			 
 			 <td><%= val[3] %></td>
 			 <td><%= val[4] %></td>
 			 <td><%= val[5] %></td>
 			 <td><%= val[6] %></td>
+
+			 <% i = i + 1 %>
 		</tr>
 	<% end %>
 	</tbody>
 </table>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#example').DataTable();
+		$('#sortTable').DataTable();
 	} );
 </script>
