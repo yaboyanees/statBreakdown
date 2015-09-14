@@ -30,7 +30,7 @@ class PortfolioController < ApplicationController
 		@team1tm13 = @team1.where("year = ?", 2013).pluck("win", "GameMean")
 		@team1off13 = @team1.where("year = ?", 2013).pluck("win", "OFFGameMean")
 		@team1def13 = @team1.where("year = ?", 2013).pluck("win", "DEFGameMean")
-		@team1s2dm13 = @team1.where("year = ?", 2013).pluck("win", "win", "Season2dateMean")
+		@team1s2dm13 = @team1.where("year = ?", 2013).pluck("win", "Season2dateMean")
 		
 		@team1tm12 = @team1.where("year = ?", 2012).pluck("win", "GameMean")	
 		@team1off12 = @team1.where("year = ?", 2012).pluck("win", "OFFGameMean")
