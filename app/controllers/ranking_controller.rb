@@ -154,7 +154,6 @@ class RankingController < ApplicationController
 		@week = Stat.pluck("week").last
 		@teamNames = Stat.order("team1").uniq.pluck("team1")
 		@yearDisplay = Stat.order("year").uniq.pluck("year")
-		@yearCurrent = Stat.pluck("year").last
 	
 		@team1 = Stat.where("short1 = ?", 'ARI')
 		@team2 = Stat.where("short1 = ?", 'ATL')
@@ -322,9 +321,10 @@ class RankingController < ApplicationController
 			@team30 = Stat.where("short1 = ?", 'TB')
 			@team31 = Stat.where("short1 = ?", 'TEN')
 			@team32 = Stat.where("short1 = ?", 'WSH')	
-
+			
 			@year = Stat.where("year = ?", 2014)
 			@yearCurrent = Stat.where("year = ?", 2014).uniq.pluck("year")
+			@week = Stat.maximum("week")
 				@teamOrder = Stat.group("id", "team1").where("year = ?", @yearCurrent).order("team1")
 				@currentData = @teamOrder.where("week = ?", @week)
 			@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
@@ -463,12 +463,13 @@ class RankingController < ApplicationController
 			@team30 = Stat.where("short1 = ?", 'TB')
 			@team31 = Stat.where("short1 = ?", 'TEN')
 			@team32 = Stat.where("short1 = ?", 'WSH')	
+				@week = Stat.maximum("week")
 				@teamOrder = Stat.group("id", "team1").where("year = ?", 2013).order("team1")
 				@currentData = @teamOrder.where("week = ?", @week)
 			@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
 			@teamCurrent = Stat.where("year = ?", 2013).where("week = ?", @week).pluck("CurrentMeanTrend")	
 			@dataValues = Stat.order("team1").where("year = ?", 2013).where("week = ?", @week).pluck("short1", "Season2dateMean", "CurrentMeanTrend", "Season2dateOFFMean", "CurrentOFFMeanTrend", "Season2dateDEFMean", "CurrentDEFMeanTrend")	
-			
+				
 				@yearCurrent = Stat.where("year = ?", 2013).uniq.pluck("year")
 				@winT1 = @team1.where("win = ?", 'W').where("year = ?", @yearCurrent).count
 				@lossT1 = @team1.where("win = ?", 'L').where("year = ?", @yearCurrent).count
@@ -603,6 +604,7 @@ class RankingController < ApplicationController
 			@team30 = Stat.where("short1 = ?", 'TB')
 			@team31 = Stat.where("short1 = ?", 'TEN')
 			@team32 = Stat.where("short1 = ?", 'WSH')	
+				@week = Stat.maximum("week")
 				@teamOrder = Stat.group("id", "team1").where("year = ?", 2012).order("team1")
 				@currentData = @teamOrder.where("week = ?", @week)
 			@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
@@ -743,6 +745,7 @@ class RankingController < ApplicationController
 			@team30 = Stat.where("short1 = ?", 'TB')
 			@team31 = Stat.where("short1 = ?", 'TEN')
 			@team32 = Stat.where("short1 = ?", 'WSH')	
+				@week = Stat.maximum("week")
 				@teamOrder = Stat.group("id", "team1").where("year = ?", 2011).order("team1")
 				@currentData = @teamOrder.where("week = ?", @week)
 			@teamValues = @currentData.pluck("Season2dateMean", "Season2dateOFFMean", "Season2dateDEFMean")
