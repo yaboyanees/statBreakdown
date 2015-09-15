@@ -44,7 +44,7 @@
 			}
 		},
 		subtitle: {
-			text: 'Team Performance By Week (2011-Current)',
+			text: 'Game-Q By Week (2011-2015)',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -89,28 +89,28 @@
         },
 		series: [{
 			name: 'Team',
-			color: '#006E29',
+			color: '#333333',
 			data: gameTeam,
 			marker: {
                 symbol: 'circle'
             },
 		}, {
 			name: 'Offense',
-			color: '#333333',
+			color: '#006E29',
 			data: gameOFF,
 			marker: {
                 symbol: 'triangle'
             },
 		}, {
 			name: 'Defense',
-			color: '#08aeff',
+			color: 'orange',
 			data: gameDEF,
 			marker: {
                 symbol: 'triangle-down'
             },
         }, {
 			type: 'spline',
-			name: 'Season 2 Date Mean',
+			name: 'Team Season-Q',
 			color: '#006E29',
 			data: games2dm,
 			marker: {
@@ -131,14 +131,14 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2015)'
+					text: 'Game-Q By Week (2015)'
 				});
 				chart.xAxis[0].update({
 					categories: <%= @team1wk  %>
 				});
 				chart.addSeries({
 					name: 'Team',
-					color: '#006E29',  
+					color: '#333333',  
 				    data: gameTeam15,
 					marker: {
 						symbol: 'circle'
@@ -146,7 +146,7 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					color: '#333333',  
+					color: '#006E29',  
 				    data: gameOFF15,
 					marker: {
 						symbol: 'triangle'
@@ -154,14 +154,14 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					color: '#08aeff',  
+					color: 'orange',  
 				    data: gameDEF15,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});   
 				chart.addSeries({
-					name: 'Season 2 Date Mean',
+					name: 'Team Season-Q',
 					type: 'spline',
 					color: '#006E29',  
 				    data: games2dm15,
@@ -181,14 +181,14 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2014)'
+					text: 'Game-Q By Week (2014)'
 				});
 				chart.xAxis[0].update({
 					categories: <%= @team1wk  %>
 				});
 				chart.addSeries({
 					name: 'Team',
-					color: '#006E29',  
+					color: '#333333',  
 				    data: gameTeam14,
 					marker: {
 						symbol: 'circle'
@@ -196,7 +196,7 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					color: '#333333',  
+					color: '#006E29',  
 				    data: gameOFF14,
 					marker: {
 						symbol: 'triangle'
@@ -204,14 +204,14 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					color: '#08aeff',  
+					color: 'orange',  
 				    data: gameDEF14,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});   
 				chart.addSeries({
-					name: 'Season 2 Date Mean',
+					name: 'Team Season-Q',
 					type: 'spline',
 					color: '#006E29',  
 				    data: games2dm14,
@@ -231,14 +231,14 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2013)'
+					text: 'Game-Q By Week (2013)'
 				});
 				chart.xAxis[0].update({
 					categories: <%= @team1wk  %>
 				});
 				chart.addSeries({
 					name: 'Team',
-					color: '#006E29',  
+					color: '#333333',  
 				    data: gameTeam13,
 					marker: {
 						symbol: 'circle'
@@ -246,7 +246,7 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					color: '#333333',  
+					color: '#006E29',  
 				    data: gameOFF13,
 					marker: {
 						symbol: 'triangle'
@@ -254,14 +254,14 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					color: '#08aeff',  
+					color: 'orange',  
 				    data: gameDEF13,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});  
 				chart.addSeries({
-					name: 'Season 2 Date Mean',
+					name: 'Team Season-Q',
 					type: 'spline',
 					color: '#006E29',  
 				    data: games2dm13,
@@ -281,14 +281,14 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2012)'
+					text: 'Game-Q By Week (2012)'
 				});
 				chart.xAxis[0].update({
 					categories: <%= @team1wk  %>
 				});
 				chart.addSeries({
 					name: 'Team',
-					color: '#006E29',  
+					color: '#333333',  
 				    data: gameTeam12,
 					marker: {
 						symbol: 'circle'
@@ -296,7 +296,7 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					color: '#333333',  
+					color: '#006E29',  
 				    data: gameOFF12,
 					marker: {
 						symbol: 'triangle'
@@ -304,14 +304,14 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					color: '#08aeff',  
+					color: 'orange',  
 				    data: gameDEF12,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});
 				chart.addSeries({
-					name: 'Season 2 Date Mean',
+					name: 'Team Season-Q',
 					type: 'spline',
 					color: '#006E29',  
 				    data: games2dm12,
@@ -331,14 +331,14 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2011)'
+					text: 'Game-Q By Week (2011)'
 				});
 				chart.xAxis[0].update({
 					categories: <%= @team1wk  %>
 				});
 				chart.addSeries({
 					name: 'Team',
-					color: '#006E29',  
+					color: '#333333',  
 				    data: gameTeam11,
 					marker: {
 						symbol: 'circle'
@@ -346,7 +346,7 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					color: '#333333',  
+					color: '#006E29',  
 				    data: gameOFF11,
 					marker: {
 						symbol: 'triangle'
@@ -354,14 +354,14 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					color: '#08aeff',  
+					color: 'orange',  
 				    data: gameDEF11,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				}); 
 				chart.addSeries({
-					name: 'Season 2 Date Mean',
+					name: 'Team Season-Q',
 					type: 'spline',
 					color: '#006E29',  
 				    data: games2dm11,
@@ -381,14 +381,14 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Team Performance By Week (2011-Current)'
+					text: 'Game-Q By Week (2011-2015)'
 				});
 				chart.xAxis[0].update({
 					categories: ['']
 				});
 				chart.addSeries({
 					name: 'Team',
-					color: '#006E29',  
+					color: '#333333',  
 				    data: gameTeam,
 					marker: {
 						symbol: 'circle'
@@ -396,7 +396,7 @@
 				});   
 				chart.addSeries({
 					name: 'Offense',
-					color: '#333333',  
+					color: '#006E29',  
 				    data: gameOFF,
 					marker: {
 						symbol: 'triangle'
@@ -404,14 +404,14 @@
 				});
 				chart.addSeries({
 					name: 'Defense',
-					color: '#08aeff',  
+					color: 'orange',  
 				    data: gameDEF,
 					marker: {
 						symbol: 'triangle-down'
 					},                  
 				});   
 				chart.addSeries({
-					name: 'Season 2 Date Mean',
+					name: 'Team Season-Q',
 					type: 'spline',
 					color: '#006E29',  
 				    data: games2dm,

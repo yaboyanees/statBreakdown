@@ -1,13 +1,9 @@
-<title>Match-Up | The Q5</title>
+<title>Match-Ups | The Q5</title>
 <div class="x-container max width">
 	<div class="x-landmark-breadcrumbs-wrap">
 		<div class="x-landmark">
-			<h1 class="h-landmark entry-title"><span>Match-Up</span></h1>
-			<%= link_to "http://www.theQ5.com/tuitorial" do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
-		</div>
-		<div class="x-breadcrumbs-wrap">
-			<div class="x-breadcrumbs"><a href="http://theq5.com"><span class="home"><i class="x-icon-home" data-x-icon="&#8962;" style="font-size: 18px; color: #333333;"></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon="|"></i></span> <span class="current" style="color: #28323F;">Q5 ZONE</span>
-			</div>              
+			<h1 class="h-landmark entry-title"><span>Match-Ups</span></h1>
+			<%= link_to "http://www.theQ5.com/" do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
 		</div>
 	</div>
 </div>
@@ -78,14 +74,20 @@
 	<br style="clear:both" />
 	<div id="column"></div>
 	<div id="scatter" style="padding-top: 35px;"></div>
-	<p class="newMatch"><%= link_to 'New Matchup', home_index_path, class: 'a' %></p>
+	<p class="newMatch"><%= link_to 'Matchup', home_index_path, class: 'a' %></p>
 <% else %>
 	<div id="teamMatchup">
-		<h2>Match-Up Teams</h2>
+		<h2>Match-Ups</h2>
 		<%= form_tag(home_index_path, :method => "get", id: "search-form", :validate=>true) do %>
 			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %><i> VS </i>
 			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team 2' %><br /><br /><br />
-			<%= submit_tag "View Matchup", :name => nil %>
+			<%= submit_tag "Match-Up", :name => nil %>
 		<% end %>
+		<p>
+			<span class="tips">Tips For Match-Up Charts</span><br/>
+			<b>Chart #1</b>: Game-Qs for the 2015 season side-by-side. Click on “team”, “offense” or “defense” to change the comparison. <br />
+			<b>Chart #2</b>: Season-Q values for team, offense and defense. Above zero: good.  below zero: bad. <br />
+			<b>Chart #3</b>: View these two teams in relation to the other 30 teams. Season-Q values for team, offense and defense revealed the strongest teams in the league. Want a different view? Grab and move for a complete 3D look! Compare the two selected teams by marker size to see who has been hotter of late.
+		</p>
 	</div>
 <% end %>

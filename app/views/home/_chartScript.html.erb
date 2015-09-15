@@ -20,7 +20,7 @@
 			}
 		},
 		subtitle: {
-			text: 'Game Performance By Week',
+			text: 'Game-Q By Week',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -70,7 +70,7 @@
 					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1s2dm.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2s2dm.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Game Performance By Week'
+					text: 'Game-Q By Week'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
@@ -95,7 +95,7 @@
 					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1offVal.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2offVal.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Game Performance By Week'
+					text: 'Game-Q By Week'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',
@@ -119,7 +119,7 @@
 					text: '<%= @team1name.first.gsub('"','') %> (<%= @team1defVal.last.round(3) %>) vs <%= @team2name.first.gsub('"','') %> (<%= @team2defVal.last.round(3) %>)' 
 					}, 
 					{ 
-					text: 'Game Performance By Week'
+					text: 'Game-Q By Week'
 				});
 				chart.addSeries({
 					name: '<%= @team1name.first.gsub('"','') %>',

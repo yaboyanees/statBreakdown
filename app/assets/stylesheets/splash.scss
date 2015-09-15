@@ -15,11 +15,15 @@
 			margin: 1% 0 0 0;
 			font-size: 20px;
 			font-style: italic;
+			font-weight: 300;
+			text-align: left;
+			line-height: 25px;
 			color: #006E29;
 		}
 	}
 	.row-top, .row-center, .row-bottom{ 
 		width: 100%;
+		height: 100%;
 		float: left;
 		padding: 5px;
 	}
@@ -43,4 +47,6 @@
 .q5zone {
 	padding: 0;
 	margin: 0;
+	text-align: center;
+	width: 100%;
 }
