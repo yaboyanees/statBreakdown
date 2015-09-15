@@ -7,7 +7,7 @@
 			<h1 class="h-landmark entry-title">
 				<span><%= params[:id].to_s  %> Q5 Rankings</span> - <%= link_to '2015', ranking_index_path %> | <%= link_to '2014', ranking_path(:id => @yearDisplay[3]) %> | <%= link_to '2013', ranking_path(:id => @yearDisplay[2]) %> | <%= link_to '2012', ranking_path(:id => @yearDisplay[1]) %> | <%= link_to '2011', ranking_path(:id => @yearDisplay[0]) %>
 			</h1>
-			<%= link_to "http://www.theQ5.com/" do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
+			<%= link_to root_path do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
 		</div>
 	</div>
 </div>

@@ -3,7 +3,7 @@
 	<div class="x-landmark-breadcrumbs-wrap">
 		<div class="x-landmark">
 			<h1 class="h-landmark entry-title"><span>Match-Ups</span></h1>
-			<%= link_to "http://www.theQ5.com/" do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
+			<%= link_to root_path do %><p><i>Want to Learn More About This Tool?</i></p><% end %>
 		</div>
 	</div>
 </div>
@@ -74,10 +74,16 @@
 	<br style="clear:both" />
 	<div id="column"></div>
 	<div id="scatter" style="padding-top: 35px;"></div>
-	<p class="newMatch"><%= link_to 'Matchup', home_index_path, class: 'a' %></p>
+	<p class="newMatch">
+		<%= link_to 'Matchup', home_index_path, class: 'a' %>
+	</p>
+	
 <% else %>
 	<div id="teamMatchup">
-		<h2>Match-Ups</h2>
+		<h2>
+			Match-Ups <br />
+			<span class="note">**<i>Using data from 2014 until WEEK 3 when the data will be meaningful</i>**</span>
+		</h2>
 		<%= form_tag(home_index_path, :method => "get", id: "search-form", :validate=>true) do %>
 			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %><i> VS </i>
 			<%= select_tag :secondTeam, options_for_select(@teamNames, params[:secondTeam]), :prompt => 'Select Team 2' %><br /><br /><br />
