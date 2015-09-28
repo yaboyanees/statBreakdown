@@ -81,8 +81,7 @@
 <% else %>
 	<div id="teamMatchup">
 		<h2>
-			Match-Ups <br />
-			<span class="note">**<i>Using data from 2014 until WEEK 3</i>**</span>
+			Match-Ups
 		</h2>
 		<%= form_tag(home_index_path, :method => "get", id: "search-form", :validate=>true) do %>
 			<%= select_tag :firstTeam, options_for_select(@teamNames, params[:firstTeam]), :prompt => 'Select Team 1' %><i> VS </i>
