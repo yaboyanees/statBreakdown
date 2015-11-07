@@ -11,7 +11,7 @@
 <div id="teamPortfolio">
 	<div id="indy_team">
 	<% @teamNames.each do |tn| %>
-		<p class="team_name"><%= link_to tn, portfolio_path(:id => tn) %></p>
+		<p class="team_name"><%= link_to tn[0], portfolio_path(:id => tn[1]) %></p>
 	<% end %>
 	</div>
 </div>
