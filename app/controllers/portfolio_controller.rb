@@ -84,6 +84,7 @@ class PortfolioController < ApplicationController
 		@ptsAgainst15 = @oppw15 + @oppl15
 	@opponentPts2015 = (@ptsAgainst15.inject(0) { |add, ea| add + ea } / @ptsAgainst15.size)
 
+	if @year == 2016
 		@w16 = @team1.where("year = ?", 2016).where("win = ?", 'W').pluck("team1pts")
 		@l16 = @team1.where("year = ?", 2016).where("win = ?", 'L').pluck("team2pts")	
 		@ptsFor16 = @w16 + @l16
@@ -92,6 +93,7 @@ class PortfolioController < ApplicationController
 		@oppl16 = @team1.where("year = ?", 2016).where("win = ?", 'L').pluck("team1pts")
 		@ptsAgainst16 = @oppw16 + @oppl16
 	@opponentPts2016 = (@ptsAgainst16.inject(0) { |add, ea| add + ea } / @ptsAgainst16.size)
+	end
 	
 	#league Off average
 	@stat = Stat.all
