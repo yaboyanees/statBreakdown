@@ -1,8 +1,8 @@
 <script type="text/javascript">
 $(function () {
-	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>, <%= raw @teamPts2015 %>]
-	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>, <%= raw @opponentPts2015 %>]
-    var leagueArray = [<%= raw @leagueOPts2011 %>, <%= raw @leagueOPts2012 %>, <%= raw @leagueOPts2013 %>, <%= raw @leagueOPts2014 %>, <%= raw @leagueOPts2015 %>]
+	var oArray = [<%= raw @teamPts2011 %>, <%= raw @teamPts2012 %>, <%= raw @teamPts2013 %>, <%= raw @teamPts2014 %>, <%= raw @teamPts2015 %>, <%= raw @teamPts2016 %>]
+	var dArray = [<%= raw @opponentPts2011 %>, <%= raw @opponentPts2012 %>, <%= raw @opponentPts2013 %>, <%= raw @opponentPts2014 %>, <%= raw @opponentPts2015 %>, <%= raw @opponentPts2016 %>]
+    var leagueArray = [<%= raw @leagueOPts2011 %>, <%= raw @leagueOPts2012 %>, <%= raw @leagueOPts2013 %>, <%= raw @leagueOPts2014 %>, <%= raw @leagueOPts2015 %>, <%= raw @leagueOPts2016 %>]
     $('#points').highcharts({  
 		chart: {
 			backgroundColor:'rgba(255, 255, 255, 0.1)'
@@ -11,13 +11,13 @@ $(function () {
 			text: '',
 		},
 		subtitle: {
-			text: 'Scored vs Allowed Points',
+			text: 'Scored vs Allowed Points (2011 - Current)',
 			style: {
 				fontSize:'1.7vmax'
 			}
 		},
         xAxis: {
-            categories: ['2011', '2012', '2013', '2014', '2015']
+            categories: ['2011', '2012', '2013', '2014', '2015', '2016']
         },
 		yAxis: {
 			title: {

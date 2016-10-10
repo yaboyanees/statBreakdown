@@ -1,4 +1,36 @@
 <div id="schedule">
+	<button onclick="show16();return false"/>2016</button>
+	<button onclick="show15();return false"/>2015</button>
+	<button onclick="show14();return false"/>2014</button>
+	<button onclick="show13();return false"/>2013</button>
+	<button onclick="show12();return false"/>2012</button>
+	<button onclick="show11();return false"/>2011</button>
+	<div id="teamTable15" style="display:none">	
+		<table cellspacing='0'> 
+			<thead>
+				<tr>
+					<th colspan="3">2015 Schedule (<%= @win15 %>-<%= @loss15 %>)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @record15.each do |r15| %>
+					<% if r15[5].nil? %>
+					<tr>
+						<td><i>Wk <%= r15[1] %></i>:</td>
+						<td ><b><%= r15[2] %></b></td>
+						<td></td>
+					</tr>	
+					<% else %>
+					<tr>
+						<td><i>Wk <%= r15[1] %></i>:</td>	
+						<td><b><%= r15[2] %></b> <%= r15[4] %>-<%= r15[5] %> vs <%= r15[3] %></td>
+						<td><%= link_to 'Game Map', home_path(:id => r15[6]) %></td>
+					</tr>					
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 	<div id="teamTable14" style="display:none">	
 		<table cellspacing='0'> 
 			<thead>
@@ -103,48 +135,53 @@
 			</tbody>
 		</table>
 	</div>
-	<div id="teamTable15" style="display:block">	
+	<div id="teamTable16" style="display:block">	
 		<table cellspacing='0'> 
 			<thead>
 				<tr>
-					<th colspan="3">2015 Schedule (<%= @win15 %>-<%= @loss15 %>)</th>
+					<th colspan="3">2016 Schedule (<%= @win16 %>-<%= @loss16 %>)</th>
 				</tr>
 			</thead>
 			<tbody>
-				<% @record15.each do |r15| %>
-					<% if r15[5].nil? %>
+				<% @record16.each do |r16| %>
+					<% if r16[5].nil? %>
 					<tr>
-						<td><i>Wk <%= r15[1] %></i>:</td>
-						<td ><b><%= r15[2] %></b></td>
+						<td><i>Wk <%= r16[1] %></i>:</td>
+						<td><b><%= r16[2] %></b></td>
 						<td></td>
 					</tr>	
 					<% else %>
 					<tr>
-						<td><i>Wk <%= r15[1] %></i>:</td>	
-						<td><b><%= r15[2] %></b> <%= r15[4] %>-<%= r15[5] %> vs <%= r15[3] %></td>
-						<td><%= link_to 'Game Map', home_path(:id => r15[6]) %></td>
+						<td><i>Wk <%= r16[1] %></i>:</td>	
+						<td><b><%= r16[2] %></b> <%= r16[4] %>-<%= r16[5] %> vs <%= r16[3] %></td>
+						<td><%= link_to 'Game Map', home_path(:id => r16[6]) %></td>
 					</tr>					
 					<% end %>
 				<% end %>
 			</tbody>
 		</table>
 	</div>
-	<button onclick="show15();return false"/>2015</button>
-	<button onclick="show14();return false"/>2014</button>
-	<button onclick="show13();return false"/>2013</button>
-	<button onclick="show12();return false"/>2012</button>
-	<button onclick="show11();return false"/>2011</button>
 </div>
 
 <script> 
+	function show16() { 
+	document.getElementById("teamTable16").style.display="block"; 
+	document.getElementById("teamTable15").style.display="none"; 
+	document.getElementById("teamTable14").style.display="none"; 
+	document.getElementById("teamTable13").style.display="none"; 
+	document.getElementById("teamTable12").style.display="none"; 
+	document.getElementById("teamTable11").style.display="none"; 
+	} 
 	function show15() { 
+	document.getElementById("teamTable16").style.display="none"; 
 	document.getElementById("teamTable15").style.display="block"; 
 	document.getElementById("teamTable14").style.display="none"; 
 	document.getElementById("teamTable13").style.display="none"; 
 	document.getElementById("teamTable12").style.display="none"; 
 	document.getElementById("teamTable11").style.display="none"; 
 	} 
-	function show14() { 
+	function show14() {
+	document.getElementById("teamTable16").style.display="none"; 
 	document.getElementById("teamTable15").style.display="none";
 	document.getElementById("teamTable14").style.display="block"; 
 	document.getElementById("teamTable13").style.display="none"; 
@@ -152,6 +189,7 @@
 	document.getElementById("teamTable11").style.display="none"; 
 	} 
 	function show13() { 
+	document.getElementById("teamTable16").style.display="none"; 
 	document.getElementById("teamTable15").style.display="none";
 	document.getElementById("teamTable14").style.display="none"; 
 	document.getElementById("teamTable13").style.display="block"; 
@@ -159,6 +197,7 @@
 	document.getElementById("teamTable11").style.display="none"; 
 	} 
 	function show12() { 
+	document.getElementById("teamTable16").style.display="none"; 
 	document.getElementById("teamTable15").style.display="none";
 	document.getElementById("teamTable14").style.display="none"; 
 	document.getElementById("teamTable13").style.display="none"; 
@@ -166,6 +205,7 @@
 	document.getElementById("teamTable11").style.display="none"; 
 	} 
 	function show11() { 
+	document.getElementById("teamTable16").style.display="none"; 
 	document.getElementById("teamTable15").style.display="none";
 	document.getElementById("teamTable14").style.display="none"; 
 	document.getElementById("teamTable13").style.display="none"; 

@@ -8,6 +8,7 @@
 	</div>
 </div>
 <div id="teamData">
+	<input class="rollup" name="newSeries" type="radio" value="g"> 2016</input>
 	<input class="rollup" name="newSeries" type="radio" value="a"> 2015</input>
 	<input class="rollup" name="newSeries" type="radio" value="b"> 2014</input>
 	<input class="rollup" name="newSeries" type="radio" value="c"> 2013</input>
@@ -18,14 +19,38 @@
 <%= render partial: 'teamScript' %>
 <div id="teamChart" style="padding: 0 0 30px 0;"></div>
 <%= render partial: 'scheduleTable' %>
-<div id="points" style="width: 49%; float: left; padding: 45px 0 40px 0; margin: 0;"></div>
-<div id="diff" style="width: 48%; float: left; float: left; padding: 45px 0 40px 0;"></div>
+<div id="points"></div>
+
 <div id="diffDiv">
+	<!--<input type="radio" onclick="javascript:void goToOption(document.gobag.year_list,'2016')" year="2016" name="year" class="difference" value="f" />
+	<input type="radio" onclick="javascript:void goToOption(document.gobag.year_list,'2015')" year="2015" name="year" class="difference" value="e" />
+	<input type="radio" onclick="javascript:void goToOption(document.gobag.year_list,'2014')" year="2014" name="year" class="difference" value="a" />
+	<input type="radio" onclick="javascript:void goToOption(document.gobag.year_list,'2013')" year="2013" name="year" class="difference" value="b" />
+	<input type="radio" onclick="javascript:void goToOption(document.gobag.year_list,'2012')" year="2012" name="year" class="difference" value="c" />
+	<input type="radio" onclick="javascript:void goToOption(document.gobag.year_list,'2011')" year="2011" name="year" class="difference" value="d" />
+
+    <select name="year_list" onchange="">
+      <option selected="selected">2016</option>
+      <option name="one" >2015</option>
+      <option name="two" >2014</option>
+      <option name="three" >2013</option>
+    </select>-->
+    
+	<input class="difference" name="newSeries" type="radio" value="f"> 2016</input>
 	<input class="difference" name="newSeries" type="radio" value="e"> 2015</input>
 	<input class="difference" name="newSeries" type="radio" value="a"> 2014</input>
 	<input class="difference" name="newSeries" type="radio" value="b"> 2013</input>
 	<input class="difference" name="newSeries" type="radio" value="c"> 2012</input>
 	<input class="difference" name="newSeries" type="radio" value="d"> 2011</input>
+	
 </div>
+
+<div id="diff"></div>
 <%= render partial: 'pointsScript' %>
 <%= render partial: 'diffScript' %>
+
+<script>
+	$('select[name="year_list"]').change(function() {
+	  $('input[year=' + $(this).val() + ']').prop('checked',true);
+	});
+</script>

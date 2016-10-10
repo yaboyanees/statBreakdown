@@ -1,5 +1,7 @@
 <script type="text/javascript">
 	$(function () {
+		var winArray16 = <%= raw @winValue16.to_json %>
+		var lossArray16 = <%= raw @lossValue16.to_json %>
 		var winArray15 = <%= raw @winValue15.to_json %>
 		var lossArray15 = <%= raw @lossValue15.to_json %>
 		var winArray14 = <%= raw @winValue14.to_json %>
@@ -24,7 +26,7 @@
 			}
 		},
 		subtitle: {
-			text: 'Win vs Loss PT Differential By Week (2014)',
+			text: 'Win vs Loss PT Differential By Week (2016)',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -70,14 +72,14 @@
 		series: [{
 			name: 'WIN',
 			color: '#006E29',
-			data: winArray14,
+			data: winArray16,
 			marker: {
                 symbol: 'triangle'
             },
 		}, {
 			name: 'LOSS',
 			color: '#333333',
-			data: lossArray14,
+			data: lossArray16,
 			marker: {
                 symbol: 'triangle-down'
             },
@@ -86,7 +88,37 @@
 		$(".difference").change(function() {
 			var value = this.getAttribute("value");
 
-			if (value == 'a') 
+			if (value == 'f') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Win vs Loss PT Differential By Week (2016)'
+				});
+				chart.addSeries({
+					name: 'WIN',
+					type: 'scatter',
+					color: '#006E29',  
+				    data: winArray16,
+					marker: {
+						symbol: 'triangle'
+					},            
+				});   
+				chart.addSeries({
+					name: 'LOSS',
+					type: 'scatter',
+					color: '#333333',  
+				    data: lossArray16,
+					marker: {
+						symbol: 'triangle-down'
+					},            
+				});               
+			}
+			
+			else if (value == 'a') 
 			{
 				chart.series[0].remove();
 				chart.series[0].remove();
@@ -215,7 +247,7 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Win vs Loss PT Differential By Week (Current)'
+					text: 'Win vs Loss PT Differential By Week (2015)'
 				});
 				chart.addSeries({
 					name: 'WIN',

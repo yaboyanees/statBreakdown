@@ -5,6 +5,11 @@
 		var gameDEF = <%= raw @team1defAll.to_json %>
 		var games2dm = <%= raw @team1s2dmAll.to_json %>
 
+		var gameTeam16 = <%= raw @team1tm16.to_json %>
+		var gameOFF16 = <%= raw @team1off16.to_json %>
+		var gameDEF16 = <%= raw @team1def16.to_json %>
+		var games2dm16 = <%= raw @team1s2dm16.to_json %>
+		
 		var gameTeam15 = <%= raw @team1tm15.to_json %>
 		var gameOFF15 = <%= raw @team1off15.to_json %>
 		var gameDEF15 = <%= raw @team1def15.to_json %>
@@ -44,7 +49,7 @@
 			}
 		},
 		subtitle: {
-			text: 'Game-Q By Week (2011-2015)',
+			text: 'Game-Q By Week (2016)',
 			style: {
 				fontSize:'1.7vmax'
 			}
@@ -90,21 +95,21 @@
 		series: [{
 			name: 'Team',
 			color: '#333333',
-			data: gameTeam,
+			data: gameTeam16,
 			marker: {
                 symbol: 'circle'
             },
 		}, {
 			name: 'Offense',
 			color: '#006E29',
-			data: gameOFF,
+			data: gameOFF16,
 			marker: {
                 symbol: 'triangle'
             },
 		}, {
 			name: 'Defense',
 			color: 'orange',
-			data: gameDEF,
+			data: gameDEF16,
 			marker: {
                 symbol: 'triangle-down'
             },
@@ -112,7 +117,7 @@
 			type: 'spline',
 			name: 'Team Season-Q',
 			color: '#006E29',
-			data: games2dm,
+			data: games2dm16,
 			marker: {
 				enabled: false
             },
@@ -381,7 +386,7 @@
 					text: '' 
 					}, 
 					{ 
-					text: 'Game-Q By Week (2011-2015)'
+					text: 'Game-Q By Week (2011-2016)'
 				});
 				chart.xAxis[0].update({
 					categories: ['']
@@ -420,6 +425,57 @@
 					},                  
 				}); 
 			}
+
+			else if (value == 'g') 
+			{
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.series[0].remove();
+				chart.setTitle({ 
+					text: '' 
+					}, 
+					{ 
+					text: 'Game-Q By Week (2016)'
+				});
+				chart.xAxis[0].update({
+					categories: <%= @team1wk  %>
+				});
+				chart.addSeries({
+					name: 'Team',
+					color: '#333333',  
+				    data: gameTeam16,
+					marker: {
+						symbol: 'circle'
+					},                  
+				});   
+				chart.addSeries({
+					name: 'Offense',
+					color: '#006E29',  
+				    data: gameOFF16,
+					marker: {
+						symbol: 'triangle'
+					},                  
+				});
+				chart.addSeries({
+					name: 'Defense',
+					color: 'orange',  
+				    data: gameDEF16,
+					marker: {
+						symbol: 'triangle-down'
+					},                  
+				}); 
+				chart.addSeries({
+					name: 'Team Season-Q',
+					type: 'spline',
+					color: '#006E29',  
+				    data: games2dm16,
+					marker: {
+						enabled: false
+					},                  
+				}); 
+			}
+			
 			else {
 			   alert("Error!");   
 			}
